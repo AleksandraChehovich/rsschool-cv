@@ -1,10 +1,10 @@
 # Aleksandra Chehovich
 
- mob: +375292484057
- e-mail: sanunia22@gmail.com
- linkedin: [Aleksandra Chehovich](https://www.linkedin.com/feed/)
- codewars: Shura Rozman
- GinHub: [AleksandraChehovich](https://github.com/AleksandraChehovich)
+* mob: +375292484057
+* e-mail: sanunia22@gmail.com
+* linkedin: [Aleksandra Chehovich](https://www.linkedin.com/feed/)
+* codewars: Shura Rozman
+* GinHub: [AleksandraChehovich](https://github.com/AleksandraChehovich)
 
 ## Summary
 
@@ -27,7 +27,10 @@ Like to study every day. Always try to find different ways to solve the problems
             sum += i;
           }
       } return sum;
-}```
+}
+```
+
+
 
 ## Experience
 
