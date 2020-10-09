@@ -18,6 +18,11 @@ body {
     display: inline-flex;
 }
 
+.header_content__img {
+    max-width: 220px;
+    border-radius: 50%;
+}
+
 .name {
     font-size: 40px;
 }
@@ -69,6 +74,27 @@ body {
 
 .code {
     padding: 30px;
+}
+
+.interests {
+    padding-top: 30px;
+}
+
+.interest_item {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.interest_item::before {
+    content: "✔";
+}
+
+.interest_list {
+    margin: 0;
+}
+
+.interests_item__text {
+    margin-left: 20px;
 }
 
 .footer {
