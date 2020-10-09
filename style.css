@@ -14,8 +14,13 @@ body {
     justify-content: space-between;
 }
 
-.header_content {
+/*.header_content {
     display: inline-flex;
+}*/
+
+.header_container {
+    display: flex;
+    justify-content: flex-start;
 }
 
 .header_content__img {
@@ -25,6 +30,23 @@ body {
 
 .name {
     font-size: 40px;
+    padding: 63px 10px 0;
+}
+
+.name_last {
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+.proff {
+    font-size: 14px;
+    border-top: 1px dotted white;
+    border-bottom: 1px dotted white;
+    text-align: center;
+}
+
+.contacts {
+    align-self: flex-end;
 }
 
 .contacts_item__link {
@@ -78,6 +100,7 @@ body {
 
 .interests {
     padding-top: 30px;
+    padding-right: 30px;
 }
 
 .interest_item {

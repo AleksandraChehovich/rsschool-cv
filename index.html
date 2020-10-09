@@ -8,16 +8,20 @@
 </head>
 <body>
     <header class="header">
-        <section class="header_content" class="photo">
+        <div class="header_container">
+            <section class="header_content" class="photo">
            <img class="header_content__img" src="./img/photo_2020-10-08_22-52-0812.jpg" alt="Image">
         </section>
-        <section class="header_content">
-            <div class="header_content__name name">
-                <div class="name_first">Aleksandra</div>
-                <div class="name_last">Chehovich</div>
-            </div>
-        </section>
-        <section class="header_content" >
+            <section class="header_content name">
+                <div class="header_content__name">
+                    <div class="name_first">Aleksandra</div>
+                    <div class="name_last">Chehovich</div>
+                    <div class="proff">FrontEnd developer</div>
+                </div>
+            </section>
+        </div>
+        
+        <section class="header_content contacts" >
             <div class="header_content__contacts">
                 <ul class="contacts">
                     <li class="contacts_item">mob: 
@@ -95,14 +99,14 @@
             <h2 class="content_header">Code example</h2>
             <div class="content_decoration"></div>
             <div class="code">
-               <code>function solution(number) {<br>
-                var sum = 0;<br>
-                for(var i = 1; i < number; i++) {<br>
-                    if(i % 3 == 0 || i % 5 == 0) {<br>
-                       sum += i;<br>
-                     }<br>
-                 } return sum;<br>
-           }
+               <code>function solution (number) {<br>
+                &ensp;&ensp;var sum = 0;<br>
+                &ensp;&ensp;for (var i = 1; i < number; i++) {<br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;if (i % 3 == 0 || i % 5 == 0) {<br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;sum += i;<br>
+                        &ensp;&ensp;&ensp;&ensp;&ensp;}<br>
+                        &ensp;&ensp;} return sum;<br>
+                        }
                </code>
             </div>
 
