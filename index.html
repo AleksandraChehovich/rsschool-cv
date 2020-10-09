@@ -9,9 +9,9 @@
 <body>
     <header class="header">
         <div class="header_container">
-            <section class="header_content" class="photo">
-           <img class="header_content__img" src="./img/photo_2020-10-08_22-52-0812.jpg" alt="Image">
-        </section>
+            <section class="header_content photo">
+                <img class="header_content__img" src="./img/photo_2020-10-08_22-52-0812.jpg" alt="Image">
+            </section>
             <section class="header_content name">
                 <div class="header_content__name">
                     <div class="name_first">Aleksandra</div>
@@ -24,7 +24,7 @@
         <section class="header_content contacts" >
             <div class="header_content__contacts">
                 <ul class="contacts">
-                    <li class="contacts_item">mob: 
+                    <li class="contacts_item">mob:
                         <a href="+375292484057" class="contacts_item__link">+375292484057</a>
                     </li>
                     <li class="contacts_item">e-mail:
@@ -52,7 +52,7 @@
         <section class="content_item">
             <h2 class="content_header">Skills</h2>
             <div class="content_decoration"></div>
-            <div class="content_skills box">
+            <div class="content_skills">
                 <div class="skills_item">
                     <ul class="skills_list">
                         <li class="list_item">HTML</li>
@@ -82,16 +82,24 @@
             <div class="content_decoration"></div>
             <div class="content_edu box">
                 <div class="education_time time">
-                    <div class="time_item">2006 - 2011</div>
-                    <div class="time_item text">City, Country</div>
-                    <div class="time_item">2018-2019</div>
-                    <div class="time_item text">City, Country</div>
+                    <div class="time_container">
+                        <div class="time_item">2006 - 2011</div>
+                        <div class="time_item text">City, Country</div>
+                    </div> 
+                    <div class="time_container">   
+                        <div class="place_item">Belarussian-Russian University Faculty: Automated electricdrives</div>
+                        <div class="place_item text">Mogilev, Belarus</div>
+                    </div>
                 </div>   
                 <div class="education_place place">
-                    <div class="place_item">Belarussian-Russian University Faculty: Automated electricdrives</div>
-                    <div class="place_item text">Mogilev, Belarus</div>
-                    <div class="place_item">Stormnet Technologies Web-design: HTML, CSS, JS</div>
-                    <div class="place_item text">Minsk, Belarus</div>
+                    <div class="time_container">
+                        <div class="time_item">2018 - 2019</div>
+                        <div class="time_item text">City, Country</div>
+                    </div>
+                    <div class="time_container">
+                        <div class="place_item">Stormnet Technologies Web-design: HTML, CSS, JS</div>
+                        <div class="place_item text">Minsk, Belarus</div>
+                    </div>
                 </div>             
             </div>
         </section>
