@@ -1,17 +1,17 @@
 body {
     box-sizing: border-box;
-    margin: 0 auto;
     max-width: 1024px;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
+    margin: 0 auto;
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
     background-color: tomato;
     color: white;
-    display: flex;
-    padding: 30px;
-    justify-content: space-between;
 }
 
 /*.header_content {
@@ -45,16 +45,16 @@ body {
 
 .proff {
     font-size: 14px;
+    text-align: center;
     border-top: 1px dotted white;
     border-bottom: 1px dotted white;
-    text-align: center;
 }
 
 .contacts {
     align-self: flex-end;
+    font-size: 15px;
     padding-left: 5px;
     margin-left: 3px;
-    font-size: 15px;
 }
 
 .contacts_item__link {
@@ -189,7 +189,7 @@ body {
          display: flex;
          flex-direction: column;
      }
- }
+}
 
  @media (max-width: 400px) {
      .photo {
@@ -214,4 +214,4 @@ body {
      .contacts {
          text-align: center;
      }
- }
+}
