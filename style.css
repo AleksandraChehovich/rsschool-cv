@@ -1,0 +1,217 @@
+body {
+    box-sizing: border-box;
+    max-width: 1024px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: tomato;
+    color: white;
+}
+
+/*.header_content {
+    display: inline-flex;
+}*/
+
+.header_container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header_content__img {
+    max-width: 100%;
+    min-width: 50px;
+    border-radius: 50%;
+}
+
+.name {
+    padding: 63px 10px 0;
+    margin-left: 15px;
+}
+
+.name_first {
+    font-size: 40px;
+}
+
+.name_last {
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+.proff {
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px dotted white;
+    border-bottom: 1px dotted white;
+}
+
+.contacts {
+    align-self: flex-end;
+    font-size: 15px;
+    padding-left: 5px;
+    margin-left: 3px;
+}
+
+.contacts_item__link {
+    text-decoration: none;
+    color: white;
+}
+
+
+.content_header {
+    margin-bottom: 3px;
+    padding-left: 30px;
+    margin-top: 0;
+}
+
+.content_summary {
+    padding: 30px;
+}
+
+.content_decoration {
+    border-top: 1.5px dotted;
+}
+
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.time, 
+.place {
+    display: flex;
+}
+
+.time_container:nth-of-type(even) {
+    margin-left: 30%;
+}
+
+.content_skills {
+     justify-content: space-between;
+     display: flex;
+     padding: 30px;
+}
+
+.skills_item {
+    margin-left: 5px;
+}
+
+.time {
+    margin-right: 10px;
+}
+
+.skills_list {
+    padding-left: 15px;
+    margin: 0;
+}
+
+.text {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 12px;
+}
+
+.code {
+    padding: 30px;
+}
+
+.interests {
+    padding-top: 30px;
+    padding-right: 30px;
+}
+
+.interest_item {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.interest_item::before {
+    content: "✔";
+}
+
+.interest_list {
+    margin: 0;
+}
+
+.interests_item__text {
+    margin-left: 20px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 30px;
+}
+
+@media (max-width:900px) {
+    .header {
+        justify-content: center;
+    }
+
+    .header_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .name {
+        padding: 10px;
+        align-items: center;
+    }
+
+    .name_first {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .name_last {
+        font-size: 35px;
+    }
+
+    .contacts {
+        margin: 0  0 2px;
+
+    }
+
+    /* .photo {
+        display: none;
+    }*/
+}
+ @media (max-width: 690px) {
+     .contacts_item {
+         display: flex;
+         flex-direction: column;
+     }
+}
+
+ @media (max-width: 400px) {
+     .photo {
+         display: none;
+     }
+
+     .header {
+         background-image: url(./img/photo_2020-10-08_22-52-0812.jpg);
+         background-position: center;
+         background-size: 100%;
+     }
+
+     .contacts_item {
+         display: inline-block;
+         flex-direction: row;
+     }
+
+     .header {
+         flex-direction: column;
+     }
+
+     .contacts {
+         text-align: center;
+     }
+}
