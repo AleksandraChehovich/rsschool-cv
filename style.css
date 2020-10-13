@@ -66,17 +66,13 @@ body {
     margin-bottom: 3px;
     padding-left: 30px;
     margin-top: 0;
+    border-bottom: 1.5px dotted;
 }
 
 .content_summary {
     padding: 30px;
+    margin: 0;
 }
-
-.content_decoration {
-    border-top: 1.5px dotted;
-}
-
-
 
 .box {
     display: flex;
@@ -99,17 +95,10 @@ body {
      padding: 30px;
 }
 
-.skills_item {
-    margin-left: 5px;
-}
-
-.time {
-    margin-right: 10px;
-}
-
 .skills_list {
     padding-left: 15px;
     margin: 0;
+    margin-left: 5px;
 }
 
 .text {
@@ -178,7 +167,7 @@ body {
         margin: 0  0 2px;
 
     }
-    
+
 }
  @media (max-width: 690px) {
      .contacts_item {
