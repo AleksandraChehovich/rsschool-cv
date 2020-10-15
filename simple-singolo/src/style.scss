@@ -1,5 +1,10 @@
 @font-face {
     font-family: 'Lato';
+    src: url(./fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
     src: url(./fonts/Lato-Bold.ttf);
 }
 
@@ -37,6 +42,7 @@ body {
 
 .logo {
     font-size: 25px;
+    margin: 0;
 
     &_star {
         color: $lite_color;
@@ -58,6 +64,7 @@ body {
 .navigation {
     display: flex;
     align-items: flex-end;
+    font-size: 14px;
 
     &_item {
         padding-left: 20px;
@@ -86,14 +93,18 @@ body {
 
     &_arrow {
         position: absolute;
-        top: 45%;
+        top: 35%;
+        padding-top: 50px;
+        padding-bottom: 50px;
 
         &__right {
             right: 40px;
+            padding-left: 50px;
         }
 
         &__left {
             left: 40px;
+            padding-right: 50px;
         }
     }
 }
@@ -123,18 +134,51 @@ body {
         grid-gap: 1vw;
         padding: 60px 0 30px;
     }
+
+    &_item {
+        &__pencil::before {
+            content: url(./svg/services-item-1.svg);
+        }
+        &__bulb::before {
+            content: url(./svg/services-item-2.svg);
+        }
+        &__heart::before {
+            content: url(./svg/services-item-3.svg);
+        }
+        &__tab::before {
+            content: url(./svg/services-item-4.svg);
+        }
+        &__dialog::before {
+            content: url(./svg/services-item-5.svg);
+        }
+        &__star::before {
+            content: url(./svg/services-item-6.svg);
+        }
+    }
 }
 
 .service {
+    position: relative;
+    padding-left: 80px;
 
     &_header {
         font-size: 18px;
         color: $header_color;
+        margin-top: 0;
+        margin-bottom: 10px;
     }
 
     &_text {
         font-size: 12px;
         color: $text_color;
+        line-height: 22px;
+    }
+
+    &::before {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
     }
 }
 
@@ -152,7 +196,6 @@ body {
 }
 
 .images {
-
 
     &_item {
         width: 220px;
@@ -243,4 +286,13 @@ body {
     border: 1px solid $header_color;
     border-radius: 50%;
     margin-left: 8px;
+    text-align: center;
+    padding-top: 7px;
+
+    &:hover {
+        border: rgb(93, 133, 241);
+        border: 3px solid rgb(93, 133, 241);
+        border-radius: 50%;
+        transition: 0.3s;
+    }
 }
