@@ -99,12 +99,12 @@ body {
 
         &__right {
             right: 40px;
-            padding-left: 50px;
+            padding-left: 30px;
         }
 
         &__left {
             left: 40px;
-            padding-right: 50px;
+            padding-right: 30px;
         }
     }
 }
@@ -160,6 +160,9 @@ body {
 .service {
     position: relative;
     padding-left: 80px;
+    overflow: hidden;
+    max-height: 100px;
+
 
     &_header {
         font-size: 18px;

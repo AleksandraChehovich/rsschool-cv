@@ -14,6 +14,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -83,16 +84,15 @@ body {
 }
 .slider_arrow__right {
   right: 40px;
-  padding-left: 50px;
+  padding-left: 30px;
 }
 .slider_arrow__left {
   left: 40px;
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .head {
   font-size: 30px;
-  font-family: "Lato-Bold", sans-serif;
   color: #666D89;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -138,6 +138,8 @@ body {
 .service {
   position: relative;
   padding-left: 80px;
+  overflow: hidden;
+  max-height: 100px;
 }
 .service_header {
   font-size: 18px;
