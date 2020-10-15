@@ -14,7 +14,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
-  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -71,7 +70,7 @@ body {
   padding-bottom: 55px;
 }
 .slider_img {
-  max-width: 100%;
+  max-width: 60vw;
 }
 .slider_img__hor {
   display: none;
@@ -114,7 +113,11 @@ body {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1vw;
-  padding: 60px 0 30px;
+  padding: 60px 0 10px;
+}
+.services_item {
+  width: 300px;
+  height: 104px;
 }
 .services_item__pencil::before {
   content: url(./svg/services-item-1.svg);
@@ -138,6 +141,7 @@ body {
 .service {
   position: relative;
   padding-left: 80px;
+  margin-bottom: 20px;
   overflow: hidden;
   max-height: 100px;
 }
@@ -167,13 +171,20 @@ body {
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 1.6vw;
+  grid-gap: 13px;
   margin-top: 6px;
+  margin-bottom: 35px;
+}
+
+.images {
+  text-align: center;
 }
 
 .images_item {
-  width: 220px;
-  height: 187px;
+  max-width: 220px;
+  max-height: 187px;
+  min-width: 216px;
+  min-height: 183px;
 }
 .images_item__1 {
   background: url(./img/1.png);
@@ -260,6 +271,65 @@ body {
   border: 3px solid #5d85f1;
   border-radius: 50%;
   transition: 0.3s;
+}
+
+@media (min-width: 768px) and (max-width: 1020px) {
+  .services_list {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5.5vw;
+    padding: 35px 0 30px;
+  }
+
+  .portfolio {
+    display: flex;
+    flex-direction: column;
+  }
+  .portfolio_images {
+    grid-template: 4fr/repeat(auto-fit, minmax(211px, 212px));
+    grid-gap: 13px 16px;
+    align-self: center;
+  }
+}
+@media (min-width: 375px) and (max-width: 768px) {
+  .header_nav {
+    display: none;
+  }
+  .header_wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .services_list {
+    max-width: 300px;
+    min-width: 300px;
+    grid-template-rows: repeat 6, 1fr;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 35px 0 0;
+  }
+  .services_item {
+    margin-bottom: 0;
+  }
+
+  .portfolio_images {
+    grid-template: 6fr/repeat(auto-fit, minmax(211px, 212px));
+    grid-gap: 13px 16px;
+  }
+
+  .images_item {
+    max-width: 220px;
+    max-height: 187px;
+    min-width: 151px;
+    min-height: 128px;
+  }
+
+  .footer {
+    display: flex;
+  }
+  .footer_copyrights {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
