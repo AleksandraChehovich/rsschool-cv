@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'Lato';
+    src: url(./fonts/Lato-Bold.ttf);
+}
 
 $lite_color: #F06C64;
 $dark_color: #2D303A;
@@ -16,9 +19,7 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-.header, 
-.main_section, 
-.footer {
+.wrapper {
     padding: 30px 40px;
     margin: 0 auto;
     max-width: 1020px;
@@ -26,8 +27,12 @@ body {
 
 .header {
     background: $dark_color;
+    border-bottom: 6px solid #323746;
+
+    &_wrapper {
     display: flex;
     justify-content: space-between;
+    }
 }
 
 .logo {
@@ -59,6 +64,18 @@ body {
     }
 }
 
+.slider {
+    background: $lite_color;
+    border-bottom: 6px solid #EA676B;
+    
+
+    &_wrapper {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    
+    }
+}
+
 .head {
     font-size: 30px;
     color: $header_color;
@@ -75,6 +92,7 @@ body {
 
 .services {
     background: #F2F2F2;
+    border-bottom: 6px solid #FFF;
 
     &_list {
         display: grid;
@@ -119,40 +137,40 @@ body {
         height: 187px;
 
         &__1 {
-            background: red;
+            background:url(./img/1.png);
         }
         &__2 {
-            background: red;
+            background:url(./img/2.png);
         }
         &__3 {
-            background: red;
+            background: url(./img/3.png);
         }
         &__4 {
-            background: red;
+            background: url(./img/4.png);
         }
         &__5 {
-            background: red;
+            background: url(./img/5.png);
         }
         &__6 {
-            background: red;
+            background: url(./img/6.png);
         }
         &__7 {
-            background: red;
+            background: url(./img/7.png);
         }
         &__8 {
-            background: red;
+            background: url(./img/8.png);
         }
         &__9 {
-            background: red;
+            background:url(./img/9.png);
         }
         &__10 {
-            background: red;
+            background:url(./img/10.png);
         }
         &__11 {
-            background: red;
+            background:url(./img/11.png);
         }
         &__12 {
-            background: red;
+            background: url(./img/12.png);
         }
     }
 
@@ -179,11 +197,14 @@ body {
 }
 
 .footer {
+    background: $dark_color;
+
+    &_wrapper {
     display: flex;
     justify-content: space-between;
     font-size: 13px;
     color: $header_color;
-    background: $dark_color;
+    }
 
     &_social {
         display: flex;
