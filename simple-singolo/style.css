@@ -56,10 +56,28 @@ body {
 .slider {
   background: #F06C64;
   border-bottom: 6px solid #EA676B;
+  text-align: center;
 }
 .slider_wrapper {
+  position: relative;
   padding-top: 55px;
   padding-bottom: 55px;
+}
+.slider_img {
+  max-width: 100%;
+}
+.slider_img__hor {
+  display: none;
+}
+.slider_arrow {
+  position: absolute;
+  top: 45%;
+}
+.slider_arrow__right {
+  right: 40px;
+}
+.slider_arrow__left {
+  left: 40px;
 }
 
 .head {

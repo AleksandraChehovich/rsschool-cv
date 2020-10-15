@@ -67,12 +67,34 @@ body {
 .slider {
     background: $lite_color;
     border-bottom: 6px solid #EA676B;
+    text-align: center;
     
 
     &_wrapper {
-    padding-top: 55px;
-    padding-bottom: 55px;
-    
+        position: relative;
+        padding-top: 55px;
+        padding-bottom: 55px;   
+    }
+
+    &_img {
+        max-width: 100%;
+        
+        &__hor {
+            display: none;
+        }
+    }
+
+    &_arrow {
+        position: absolute;
+        top: 45%;
+
+        &__right {
+            right: 40px;
+        }
+
+        &__left {
+            left: 40px;
+        }
     }
 }
 
