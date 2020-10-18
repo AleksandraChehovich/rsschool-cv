@@ -7,34 +7,13 @@
     <title>simple-singolo</title>
 </head>
 <body>
-    <div class="burger-page" id="burger-page">
-        <div class="burger-page_wrapper">
-            <div class="burger-page_header">
-                <div class="burger-page_svg">
-                    <input type="checkbox" id="trigger1">    
-                    <label for="trigger1" class="burger_label"  >          
-                        <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.3 0.5C19.9627 0.5 20.5 1.03726 20.5 1.7L20.5 24.3C20.5 24.9627 19.9627 25.5 19.3 25.5C18.6373 25.5 18.1 24.9627 18.1 24.3L18.1 1.7C18.1 1.03726 18.6373 0.5 19.3 0.5ZM10.5 0.5C11.1627 0.5 11.7 1.03726 11.7 1.7L11.7 24.3C11.7 24.9627 11.1627 25.5 10.5 25.5C9.83726 25.5 9.3 24.9627 9.3 24.3L9.3 1.7C9.3 1.03726 9.83726 0.5 10.5 0.5ZM2.90001 1.7C2.90001 1.03726 2.36275 0.499999 1.7 0.499999C1.03726 0.499999 0.5 1.03726 0.5 1.7L0.499999 24.3C0.499999 24.9627 1.03726 25.5 1.7 25.5C2.36274 25.5 2.9 24.9627 2.9 24.3L2.90001 1.7Z" fill="white"/>
-                            </svg>                            
-                    </label>
-                </div>
-                <a href="#" class="link"><h1 class="header_logo logo">Singolo<span class="logo_star">*</span>
-                </h1></a>
-            </div>
-            <nav class="burger-page_nav">
-                <a href="#home" class="navigation_item navigation_item__burger link link__red">Home</a>
-                <a href="#service" class="navigation_item navigation_item__burger link link__red">Services</a>
-                <a href="#portfolio" class="navigation_item navigation_item__burger link link__red">Portfolio</a>
-                <a href="#" class="navigation_item navigation_item__burger link link__red">About</a>
-                <a href="#" class="navigation_item navigation_item__burger link link__red">Contact</a>
-            </nav>
-        </div>
-    </div>
     <div class="conteiner">
         <header class="header" id="home">
             <div class="wrapper header_wrapper">
+                <input type="checkbox" id="trigger">
+                <input type="checkbox" id="trigger1"> 
                 <div class="header_burger burger">
-                    <input type="checkbox" id="trigger">    
+                        
                     <label for="trigger" class="burger_label"  >          
                         <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.2C0 0.537259 0.537259 0 1.2 0H23.8C24.4627 0 25 0.537259 25 1.2C25 1.86274 24.4627 2.4 23.8 2.4H1.2C0.537259 2.4 0 1.86274 0 1.2ZM0 10C0 9.33726 0.537259 8.8 1.2 8.8H23.8C24.4627 8.8 25 9.33726 25 10C25 10.6627 24.4627 11.2 23.8 11.2H1.2C0.537259 11.2 0 10.6627 0 10ZM1.2 17.6C0.53726 17.6 0 18.1373 0 18.8C0 19.4627 0.537259 20 1.2 20H23.8C24.4627 20 25 19.4627 25 18.8C25 18.1373 24.4627 17.6 23.8 17.6H1.2Z" fill="white"/>
@@ -50,6 +29,28 @@
                     <a href="#" class="navigation_item link link__red">About</a>
                     <a href="#" class="navigation_item link link__red">Contact</a>
                 </nav>
+                <div class="burger-page" id="burger-page">
+                    <div class="burger-page_wrapper">
+                        <div class="burger-page_header">
+                            <div class="burger-page_svg">   
+                                <label for="trigger1" class="burger_label"  >          
+                                    <svg width="21" height="26" viewBox="0 0 21 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.3 0.5C19.9627 0.5 20.5 1.03726 20.5 1.7L20.5 24.3C20.5 24.9627 19.9627 25.5 19.3 25.5C18.6373 25.5 18.1 24.9627 18.1 24.3L18.1 1.7C18.1 1.03726 18.6373 0.5 19.3 0.5ZM10.5 0.5C11.1627 0.5 11.7 1.03726 11.7 1.7L11.7 24.3C11.7 24.9627 11.1627 25.5 10.5 25.5C9.83726 25.5 9.3 24.9627 9.3 24.3L9.3 1.7C9.3 1.03726 9.83726 0.5 10.5 0.5ZM2.90001 1.7C2.90001 1.03726 2.36275 0.499999 1.7 0.499999C1.03726 0.499999 0.5 1.03726 0.5 1.7L0.499999 24.3C0.499999 24.9627 1.03726 25.5 1.7 25.5C2.36274 25.5 2.9 24.9627 2.9 24.3L2.90001 1.7Z" fill="white"/>
+                                        </svg>                            
+                                </label>
+                            </div>
+                            <a href="#" class="link"><h1 class="header_logo logo">Singolo<span class="logo_star">*</span>
+                            </h1></a>
+                        </div>
+                        <nav class="burger-page_nav">
+                            <a href="#home" class="navigation_item navigation_item__burger link link__red">Home</a>
+                            <a href="#service" class="navigation_item navigation_item__burger link link__red">Services</a>
+                            <a href="#portfolio" class="navigation_item navigation_item__burger link link__red">Portfolio</a>
+                            <a href="#" class="navigation_item navigation_item__burger link link__red">About</a>
+                            <a href="#" class="navigation_item navigation_item__burger link link__red">Contact</a>
+                        </nav>
+                    </div>
+                </div>
             </div>
         </header>
         <main class="main">

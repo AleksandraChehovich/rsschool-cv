@@ -34,13 +34,13 @@ body {
 .burger-page {
     position: fixed;
     top: 0;
-    left: 0;
+    left: -500px;
     bottom: 0;
     right: 0;
     background: rgba(40, 46, 49, 0.6);
     opacity: 1;
     z-index: 3;
-    display: none;
+    width: 500px;
 
     &_header {
         display: flex;
@@ -95,8 +95,12 @@ body {
 
 }
 
+#trigger:checked ~ .burger-page {
+    left: 0;
+}
+
 #trigger1:checked ~ .burger-page {
-        display: none;
+        left: -500px;
     }
 
 .header {
