@@ -14,14 +14,46 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Lato", sans-serif;
+  position: relative;
 }
 
 .burger-page {
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  background: #323746;
-  opacity: 0.3;
+  right: 0;
+  background: rgba(40, 46, 49, 0.6);
+  opacity: 1;
+  z-index: 3;
+  display: none;
+}
+.burger-page_header {
+  display: flex;
+  padding-top: 23px;
+  padding-left: 23px;
+  margin-bottom: 185px;
+}
+.burger-page_svg {
+  margin-right: 30px;
+}
+.burger-page_wrapper {
+  background-color: #2D303A;
+  width: 278px;
+  box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+}
+
+.burger-page_nav {
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  padding-right: 115px;
+  padding-bottom: 320px;
+}
+
+.navigation_item__burger {
+  padding-top: 27px;
 }
 
 .wrapper {
@@ -37,7 +69,12 @@ body {
   cursor: pointer;
 }
 
-#trigger {
+#trigger,
+#trigger1 {
+  display: none;
+}
+
+#trigger1:checked ~ .burger-page {
   display: none;
 }
 

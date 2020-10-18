@@ -31,3 +31,19 @@ function moveRight () {
         slider.style.backgroundColor = "#648BF0";
         }  
 }
+
+let triggerToOppen = document.getElementById("trigger"),
+    triggerToClose = document.getElementById("trigger1");
+
+
+function openBurgerMenu() {
+    if (triggerToOppen.checked) {
+      return  document.getElementById("burger-page").style.display = "block";
+    } else document.getElementById("burger-page").style.display = "none";
+}
+
+function closeBurgerMenu() {
+    if (triggerToClose.checked) {
+       return document.getElementById("burger-page").style.display = "none";
+    } else document.getElementById("burger-page").style.display = "block";
+}
