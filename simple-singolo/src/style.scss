@@ -30,6 +30,15 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+.burger-page {
+//    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #323746;
+    opacity: 0.3;
+}
+
 .wrapper {
     padding: 30px 40px;
     margin: 0 auto;
@@ -51,6 +60,7 @@ body {
 .header {
     background: $dark_color;
     border-bottom: 6px solid #323746;
+
 
     &_wrapper {
     display: flex;

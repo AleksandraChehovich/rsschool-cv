@@ -7,131 +7,136 @@
     <title>simple-singolo</title>
 </head>
 <body>
-    <header class="header" id="home">
-        <div class="wrapper header_wrapper">
-            <div class="header_burger burger">
-                <input type="checkbox" id="trigger">    
-                <label for="trigger" class="burger_label"  >          
-                    <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.2C0 0.537259 0.537259 0 1.2 0H23.8C24.4627 0 25 0.537259 25 1.2C25 1.86274 24.4627 2.4 23.8 2.4H1.2C0.537259 2.4 0 1.86274 0 1.2ZM0 10C0 9.33726 0.537259 8.8 1.2 8.8H23.8C24.4627 8.8 25 9.33726 25 10C25 10.6627 24.4627 11.2 23.8 11.2H1.2C0.537259 11.2 0 10.6627 0 10ZM1.2 17.6C0.53726 17.6 0 18.1373 0 18.8C0 19.4627 0.537259 20 1.2 20H23.8C24.4627 20 25 19.4627 25 18.8C25 18.1373 24.4627 17.6 23.8 17.6H1.2Z" fill="white"/>
-                    </svg>
-                </label>
+    <div class="burger-page"></div>
+    <div class="conteiner">
+        <header class="header" id="home">
+            <div class="wrapper header_wrapper">
+                <div class="header_burger burger">
+                    <input type="checkbox" id="trigger">    
+                    <label for="trigger" class="burger_label"  >          
+                        <svg width="25" height="20" viewBox="0 0 25 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.2C0 0.537259 0.537259 0 1.2 0H23.8C24.4627 0 25 0.537259 25 1.2C25 1.86274 24.4627 2.4 23.8 2.4H1.2C0.537259 2.4 0 1.86274 0 1.2ZM0 10C0 9.33726 0.537259 8.8 1.2 8.8H23.8C24.4627 8.8 25 9.33726 25 10C25 10.6627 24.4627 11.2 23.8 11.2H1.2C0.537259 11.2 0 10.6627 0 10ZM1.2 17.6C0.53726 17.6 0 18.1373 0 18.8C0 19.4627 0.537259 20 1.2 20H23.8C24.4627 20 25 19.4627 25 18.8C25 18.1373 24.4627 17.6 23.8 17.6H1.2Z" fill="white"/>
+                        </svg>
+                    </label>
+                </div>
+                <a href="#" class="link"><h1 class="header_logo logo">Singolo<span class="logo_star">*</span>
+                </h1></a>
+                <nav class="header_nav navigation">  
+                    <a href="#home" class="navigation_item link link__red">Home</a>
+                    <a href="#service" class="navigation_item link link__red">Services</a>
+                    <a href="#portfolio" class="navigation_item link link__red">Portfolio</a>
+                    <a href="#" class="navigation_item link link__red">About</a>
+                    <a href="#" class="navigation_item link link__red">Contact</a>
+                </nav>
             </div>
-            <h1 href="#" class="header_logo logo link">Singolo<span class="logo_star">*</h1></a>
-            <nav class="header_nav navigation">  
-                <a href="#home" class="navigation_item link link__red">Home</a>
-                <a href="#service" class="navigation_item link link__red">Services</a>
-                <a href="#portfolio" class="navigation_item link link__red">Portfolio</a>
-                <a href="#" class="navigation_item link link__red">About</a>
-                <a href="#" class="navigation_item link link__red">Contact</a>
-            </nav>
-        </div>
-    </header>
-    <main class="main">
-        <section class="slider main_section">
-            <div class="wrapper slider_wrapper">
-                <img class="slider_img slider_img__ver" src="./img/slider-content.png" alt="1">
-                <img class="slider_img slider_img__hor" src="./img/Slider.png" alt="1">
-                <a href="#" class="slider_arrow slider_arrow__right link">
-                    <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.697849 22.9923C-0.233349 23.9092 -0.232514 25.3553 0.699743 26.2713C1.68867 27.2429 3.33657 27.2429 4.32549 26.2713L15.0449 15.7392C16.3184 14.4879 16.3184 12.5121 15.0449 11.2608L4.32549 0.728735C3.33657 -0.242913 1.68867 -0.242911 0.699746 0.728737C-0.232511 1.64471 -0.233347 3.09077 0.69785 4.00769L8.06645 11.2634C9.33653 12.514 9.33653 14.486 8.06645 15.7366L0.697849 22.9923Z" fill="#E94348"/>
-                    </svg>                        
-                </a>
-                <a href="#" class="slider_arrow slider_arrow__left link">
-                    <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15.3022 4.0077C16.2333 3.09077 16.2325 1.64471 15.3003 0.728736C14.3113 -0.242912 12.6634 -0.242912 11.6745 0.728737L0.955147 11.2608C-0.318384 12.5121 -0.318381 14.4879 0.955149 15.7392L11.6745 26.2713C12.6634 27.2429 14.3113 27.2429 15.3003 26.2713C16.2325 25.3553 16.2333 23.9092 15.3022 22.9923L7.93355 15.7366C6.66347 14.486 6.66347 12.514 7.93355 11.2634L15.3022 4.0077Z" fill="#E94348"/>
-                    </svg>                       
-                </a>
-            </div>
-        </section>
-        <section class="services main_section" id="service">
-            <div class="wrapper services_wrapper">
-                <h2 class="services_header head">Our Services</h2>
-                <p class="services_description description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-                </p>
-                <div class="services_list">
-                    <div class="services_item services_item__pencil service">                       
-                        <h3 class="service_header">Custom Design</h3>
-                        <p class="service_text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
-                    </div>
-                    <div class="services_item services_item__bulb service">
-                        <h3 class="service_header">Inovative Ideas</h3>
-                        <p class="service_text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
-                    </div>
-                    <div class="services_item services_item__heart service">
-                        <h3 class="service_header">Love Is The Answer</h3>
-                        <p class="service_text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
-                    </div>
-                    <div class="services_item services_item__tab service">
-                        <h3 class="service_header">Responsive Layout</h3>
-                        <p class="service_text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
-                    </div>
-                    <div class="services_item services_item__dialog service">
-                        <h3 class="service_header">24 / 7 Support</h3>
-                        <p class="service_text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
-                    </div>
-                    <div class="services_item services_item__star service">
-                        <h3 class="service_header">Feel Like A Star</h3>
-                        <p class="service_text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
+        </header>
+        <main class="main">
+            <section class="slider main_section" id="slider">
+                <div class="wrapper slider_wrapper">
+                    <img class="slider_img slider_img__ver" src="./img/slider-content.png" alt="1">
+                    <img class="slider_img slider_img__hor" src="./img/Slider.png" alt="1">
+                    <a href="#" class="slider_arrow slider_arrow__right link" id="slider_arrow__right">
+                        <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.697849 22.9923C-0.233349 23.9092 -0.232514 25.3553 0.699743 26.2713C1.68867 27.2429 3.33657 27.2429 4.32549 26.2713L15.0449 15.7392C16.3184 14.4879 16.3184 12.5121 15.0449 11.2608L4.32549 0.728735C3.33657 -0.242913 1.68867 -0.242911 0.699746 0.728737C-0.232511 1.64471 -0.233347 3.09077 0.69785 4.00769L8.06645 11.2634C9.33653 12.514 9.33653 14.486 8.06645 15.7366L0.697849 22.9923Z" fill="#E94348"/>
+                        </svg>                        
+                    </a>
+                    <a href="#" class="slider_arrow slider_arrow__left link" id="slider_arrow__left">
+                        <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15.3022 4.0077C16.2333 3.09077 16.2325 1.64471 15.3003 0.728736C14.3113 -0.242912 12.6634 -0.242912 11.6745 0.728737L0.955147 11.2608C-0.318384 12.5121 -0.318381 14.4879 0.955149 15.7392L11.6745 26.2713C12.6634 27.2429 14.3113 27.2429 15.3003 26.2713C16.2325 25.3553 16.2333 23.9092 15.3022 22.9923L7.93355 15.7366C6.66347 14.486 6.66347 12.514 7.93355 11.2634L15.3022 4.0077Z" fill="#E94348"/>
+                        </svg>                       
+                    </a>
+                </div>
+            </section>
+            <section class="services main_section" id="service">
+                <div class="wrapper services_wrapper">
+                    <h2 class="services_header head">Our Services</h2>
+                    <p class="services_description description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                    </p>
+                    <div class="services_list">
+                        <div class="services_item services_item__pencil service">                       
+                            <h3 class="service_header">Custom Design</h3>
+                            <p class="service_text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
+                        </div>
+                        <div class="services_item services_item__bulb service">
+                            <h3 class="service_header">Inovative Ideas</h3>
+                            <p class="service_text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                        </div>
+                        <div class="services_item services_item__heart service">
+                            <h3 class="service_header">Love Is The Answer</h3>
+                            <p class="service_text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
+                        </div>
+                        <div class="services_item services_item__tab service">
+                            <h3 class="service_header">Responsive Layout</h3>
+                            <p class="service_text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
+                        </div>
+                        <div class="services_item services_item__dialog service">
+                            <h3 class="service_header">24 / 7 Support</h3>
+                            <p class="service_text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
+                        </div>
+                        <div class="services_item services_item__star service">
+                            <h3 class="service_header">Feel Like A Star</h3>
+                            <p class="service_text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="portfolio main_section" id="portfolio">
-            <div class="wrapper portfolio_wrapper">
-                <h2 class="portfolio_header head">Portfolio</h2>
-                <p class="portfolio_description description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
-                </p>
-                <div class="portfolio_filter filter">
-                    <p class="filter_item">All</p>
-                    <p class="filter_item">Web Design</p>
-                    <p class="filter_item">Graphic Design</p>
-                    <p class="filter_item">Artwork</p>
+            </section>
+            <section class="portfolio main_section" id="portfolio">
+                <div class="wrapper portfolio_wrapper">
+                    <h2 class="portfolio_header head">Portfolio</h2>
+                    <p class="portfolio_description description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+                    </p>
+                    <div class="portfolio_filter filter">
+                        <p class="filter_item">All</p>
+                        <p class="filter_item">Web Design</p>
+                        <p class="filter_item">Graphic Design</p>
+                        <p class="filter_item">Artwork</p>
+                    </div>
+                    <div class="portfolio_images images">
+                            <img class="images_item images_item__1" src="./img/1.png" alt="1">
+                            <img class="images_item images_item__1" src="./img/2.png" alt="2">
+                            <img class="images_item images_item__1" src="./img/3.png" alt="3">
+                            <img class="images_item images_item__1" src="./img/4.png" alt="4">
+                            <img class="images_item images_item__1" src="./img/5.png" alt="5">
+                            <img class="images_item images_item__1" src="./img/6.png" alt="6">
+                            <img class="images_item images_item__1" src="./img/7.png" alt="7">
+                            <img class="images_item images_item__1" src="./img/8.png" alt="8">
+                            <img class="images_item images_item__1" src="./img/9.png" alt="9">
+                            <img class="images_item images_item__1" src="./img/10.png" alt="10">
+                            <img class="images_item images_item__1" src="./img/11.png" alt="11">
+                            <img class="images_item images_item__1" src="./img/12.png" alt="12">
+                    </div>
                 </div>
-                <div class="portfolio_images images">
-                        <img class="images_item images_item__1" src="./img/1.png" alt="1">
-                        <img class="images_item images_item__1" src="./img/2.png" alt="2">
-                        <img class="images_item images_item__1" src="./img/3.png" alt="3">
-                        <img class="images_item images_item__1" src="./img/4.png" alt="4">
-                        <img class="images_item images_item__1" src="./img/5.png" alt="5">
-                        <img class="images_item images_item__1" src="./img/6.png" alt="6">
-                        <img class="images_item images_item__1" src="./img/7.png" alt="7">
-                        <img class="images_item images_item__1" src="./img/8.png" alt="8">
-                        <img class="images_item images_item__1" src="./img/9.png" alt="9">
-                        <img class="images_item images_item__1" src="./img/10.png" alt="10">
-                        <img class="images_item images_item__1" src="./img/11.png" alt="11">
-                        <img class="images_item images_item__1" src="./img/12.png" alt="12">
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="wrapper footer_wrapper">
+                <p class="footer_copyrights">© Copyright 2013</p>
+                <div class="footer_social social">
+                    <a href="" class="social_item social_item__facebook link">
+                        <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 2.68382H5.71472C5.44464 2.68382 5.14288 3.02931 5.14288 3.49147V5.09602H8V7.38269H5.14288V14.25H2.4456V7.38269H0V5.09602H2.4456V3.75C2.4456 1.81987 3.82336 0.25 5.71472 0.25H8V2.68382Z" fill="#666D89"/>
+                        </svg>                        
+                    </a>
+                    <a href="" class="social_item social_item__google link">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.6565 5.72432V3.33795H10.1722V5.72432H7.82873V7.23568H10.1722V9.62205H11.6565V7.23568H14V5.72432H11.6565ZM5.60365 2.97539C5.95611 4.23745 5.42382 5.55727 4.57594 5.80052C4.4786 5.82836 4.37752 5.84268 4.27566 5.84268C3.4987 5.84268 2.72878 5.0423 2.44381 3.93995C2.28461 3.32061 2.29742 2.77923 2.48021 2.25868C2.65988 1.74657 2.98235 1.4007 3.38856 1.28441C3.48621 1.25625 3.5876 1.24193 3.68915 1.24193C4.62718 1.24193 5.23009 1.63791 5.60365 2.97539ZM6.54168 10.9102C6.61026 12.0291 5.67051 12.8545 4.25941 12.9591C2.82612 13.0657 1.64624 12.4087 1.57749 11.2912C1.54422 10.7545 1.77622 10.228 2.22993 9.80914C2.69035 9.38452 3.32232 9.12266 4.0099 9.07111C4.09099 9.06586 4.1716 9.06252 4.25175 9.06252C5.57834 9.06252 6.47668 9.85655 6.54168 10.9102ZM0.742736 3.74093C0.742736 4.92902 1.13238 5.78684 1.90074 6.29084C2.52959 6.70336 3.26014 6.76509 3.63947 6.76509C3.73149 6.76509 3.80539 6.76159 3.85695 6.75809C3.85695 6.75809 3.73649 7.55609 4.31768 8.34598L4.29144 8.34582C3.28451 8.34582 0 8.55996 0 11.3094C0 14.107 3.01657 14.249 3.62166 14.249C3.669 14.249 3.69681 14.2481 3.69681 14.2481C3.70353 14.2483 3.7468 14.25 3.82039 14.25C4.20879 14.25 5.21275 14.2002 6.145 13.7388C7.35425 13.141 7.96793 12.1013 7.96793 10.6485C7.96793 9.24452 7.03319 8.40898 6.35091 7.79823C5.93439 7.42627 5.57459 7.10491 5.57459 6.79246C5.57459 6.47411 5.83737 6.23484 6.16968 5.93177C6.70791 5.44161 7.21504 4.744 7.21504 3.4253C7.21504 2.266 7.0674 1.48789 6.15812 0.994228C6.25295 0.94475 6.58808 0.908636 6.754 0.885409C7.24676 0.816841 7.96793 0.739046 7.96793 0.329227V0.25H4.37533C4.3394 0.250955 0.742736 0.386659 0.742736 3.74093Z" fill="#666D89"/>
+                        </svg>                        
+                    </a>
+                    <a href="" class="social_item social_item__twitter link">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 1.67039C13.4846 1.91146 12.9313 2.0742 12.3501 2.14755C12.9435 1.77263 13.3988 1.17879 13.6133 0.471485C13.0582 0.818478 12.4434 1.07078 11.7894 1.20656C11.2653 0.617697 10.5187 0.25 9.69272 0.25C8.10646 0.25 6.82044 1.60636 6.82044 3.27921C6.82044 3.51675 6.8457 3.74786 6.89485 3.96951C4.50785 3.84336 2.39081 2.63722 0.974522 0.804355C0.727239 1.25198 0.585565 1.77231 0.585565 2.32747C0.585565 3.3784 1.09261 4.30543 1.86322 4.84887C1.3927 4.83314 0.949566 4.69704 0.562283 4.47009C0.561979 4.48261 0.561979 4.49529 0.561979 4.50813C0.561979 5.97587 1.55233 7.2003 2.86604 7.47844C2.62531 7.54778 2.37148 7.58501 2.10928 7.58501C1.92439 7.58501 1.74467 7.56591 1.56907 7.5306C1.93459 8.73401 2.9957 9.61 4.2522 9.63423C3.269 10.447 2.03091 10.9312 0.685087 10.9312C0.453326 10.9312 0.224761 10.9168 0 10.8885C1.27096 11.7483 2.78037 12.25 4.403 12.25C9.68587 12.25 12.5752 7.63364 12.5752 3.63038C12.5752 3.49941 12.5725 3.36861 12.5668 3.23844C13.1281 2.81152 13.6149 2.27803 14 1.67039Z" fill="#666D89"/>
+                        </svg>                        
+                    </a>
+                    <a href="" class="social_item social_item__linkedin link">
+                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.0787113 4.48402H3.07192V14.25H0.0787113V4.48402ZM3.17008 1.76788C3.17008 2.60642 2.55967 3.28561 1.55525 3.28561C0.610402 3.28561 0 2.60642 0 1.76788C0 0.908996 0.630157 0.25 1.59476 0.25C2.55967 0.25 3.15063 0.908996 3.17008 1.76788Z" fill="#666D89"/>
+                            <path d="M4.86295 7.5948C4.86295 6.37668 4.82375 5.35829 4.78455 4.47936H7.38342L7.52171 5.83743H7.58066C7.97438 5.19815 8.93929 4.25944 10.5541 4.25944C12.5231 4.25944 14 5.59778 14 8.47341V14.2453H11.0068V8.83312C11.0068 7.57477 10.5736 6.71635 9.49043 6.71635C8.66349 6.71635 8.17162 7.29536 7.95493 7.85449C7.87591 8.05407 7.85615 8.33395 7.85615 8.61351V14.2453H4.86295V7.5948Z" fill="#666D89"/>
+                        </svg>                        
+                    </a>
                 </div>
             </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="wrapper footer_wrapper">
-            <p class="footer_copyrights">© Copyright 2013</p>
-            <div class="footer_social social">
-                <a href="" class="social_item social_item__facebook link">
-                    <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M8 2.68382H5.71472C5.44464 2.68382 5.14288 3.02931 5.14288 3.49147V5.09602H8V7.38269H5.14288V14.25H2.4456V7.38269H0V5.09602H2.4456V3.75C2.4456 1.81987 3.82336 0.25 5.71472 0.25H8V2.68382Z" fill="#666D89"/>
-                    </svg>                        
-                </a>
-                <a href="" class="social_item social_item__google link">
-                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.6565 5.72432V3.33795H10.1722V5.72432H7.82873V7.23568H10.1722V9.62205H11.6565V7.23568H14V5.72432H11.6565ZM5.60365 2.97539C5.95611 4.23745 5.42382 5.55727 4.57594 5.80052C4.4786 5.82836 4.37752 5.84268 4.27566 5.84268C3.4987 5.84268 2.72878 5.0423 2.44381 3.93995C2.28461 3.32061 2.29742 2.77923 2.48021 2.25868C2.65988 1.74657 2.98235 1.4007 3.38856 1.28441C3.48621 1.25625 3.5876 1.24193 3.68915 1.24193C4.62718 1.24193 5.23009 1.63791 5.60365 2.97539ZM6.54168 10.9102C6.61026 12.0291 5.67051 12.8545 4.25941 12.9591C2.82612 13.0657 1.64624 12.4087 1.57749 11.2912C1.54422 10.7545 1.77622 10.228 2.22993 9.80914C2.69035 9.38452 3.32232 9.12266 4.0099 9.07111C4.09099 9.06586 4.1716 9.06252 4.25175 9.06252C5.57834 9.06252 6.47668 9.85655 6.54168 10.9102ZM0.742736 3.74093C0.742736 4.92902 1.13238 5.78684 1.90074 6.29084C2.52959 6.70336 3.26014 6.76509 3.63947 6.76509C3.73149 6.76509 3.80539 6.76159 3.85695 6.75809C3.85695 6.75809 3.73649 7.55609 4.31768 8.34598L4.29144 8.34582C3.28451 8.34582 0 8.55996 0 11.3094C0 14.107 3.01657 14.249 3.62166 14.249C3.669 14.249 3.69681 14.2481 3.69681 14.2481C3.70353 14.2483 3.7468 14.25 3.82039 14.25C4.20879 14.25 5.21275 14.2002 6.145 13.7388C7.35425 13.141 7.96793 12.1013 7.96793 10.6485C7.96793 9.24452 7.03319 8.40898 6.35091 7.79823C5.93439 7.42627 5.57459 7.10491 5.57459 6.79246C5.57459 6.47411 5.83737 6.23484 6.16968 5.93177C6.70791 5.44161 7.21504 4.744 7.21504 3.4253C7.21504 2.266 7.0674 1.48789 6.15812 0.994228C6.25295 0.94475 6.58808 0.908636 6.754 0.885409C7.24676 0.816841 7.96793 0.739046 7.96793 0.329227V0.25H4.37533C4.3394 0.250955 0.742736 0.386659 0.742736 3.74093Z" fill="#666D89"/>
-                    </svg>                        
-                </a>
-                <a href="" class="social_item social_item__twitter link">
-                    <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M14 1.67039C13.4846 1.91146 12.9313 2.0742 12.3501 2.14755C12.9435 1.77263 13.3988 1.17879 13.6133 0.471485C13.0582 0.818478 12.4434 1.07078 11.7894 1.20656C11.2653 0.617697 10.5187 0.25 9.69272 0.25C8.10646 0.25 6.82044 1.60636 6.82044 3.27921C6.82044 3.51675 6.8457 3.74786 6.89485 3.96951C4.50785 3.84336 2.39081 2.63722 0.974522 0.804355C0.727239 1.25198 0.585565 1.77231 0.585565 2.32747C0.585565 3.3784 1.09261 4.30543 1.86322 4.84887C1.3927 4.83314 0.949566 4.69704 0.562283 4.47009C0.561979 4.48261 0.561979 4.49529 0.561979 4.50813C0.561979 5.97587 1.55233 7.2003 2.86604 7.47844C2.62531 7.54778 2.37148 7.58501 2.10928 7.58501C1.92439 7.58501 1.74467 7.56591 1.56907 7.5306C1.93459 8.73401 2.9957 9.61 4.2522 9.63423C3.269 10.447 2.03091 10.9312 0.685087 10.9312C0.453326 10.9312 0.224761 10.9168 0 10.8885C1.27096 11.7483 2.78037 12.25 4.403 12.25C9.68587 12.25 12.5752 7.63364 12.5752 3.63038C12.5752 3.49941 12.5725 3.36861 12.5668 3.23844C13.1281 2.81152 13.6149 2.27803 14 1.67039Z" fill="#666D89"/>
-                    </svg>                        
-                </a>
-                <a href="" class="social_item social_item__linkedin link">
-                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.0787113 4.48402H3.07192V14.25H0.0787113V4.48402ZM3.17008 1.76788C3.17008 2.60642 2.55967 3.28561 1.55525 3.28561C0.610402 3.28561 0 2.60642 0 1.76788C0 0.908996 0.630157 0.25 1.59476 0.25C2.55967 0.25 3.15063 0.908996 3.17008 1.76788Z" fill="#666D89"/>
-                        <path d="M4.86295 7.5948C4.86295 6.37668 4.82375 5.35829 4.78455 4.47936H7.38342L7.52171 5.83743H7.58066C7.97438 5.19815 8.93929 4.25944 10.5541 4.25944C12.5231 4.25944 14 5.59778 14 8.47341V14.2453H11.0068V8.83312C11.0068 7.57477 10.5736 6.71635 9.49043 6.71635C8.66349 6.71635 8.17162 7.29536 7.95493 7.85449C7.87591 8.05407 7.85615 8.33395 7.85615 8.61351V14.2453H4.86295V7.5948Z" fill="#666D89"/>
-                    </svg>                        
-                </a>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
+    <script src="./skript.js"></script>
 </body>
 </html>

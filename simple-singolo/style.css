@@ -16,6 +16,14 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+.burger-page {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #323746;
+  opacity: 0.3;
+}
+
 .wrapper {
   padding: 30px 40px;
   margin: 0 auto;
