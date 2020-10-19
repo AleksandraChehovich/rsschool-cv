@@ -18,6 +18,7 @@ body {
 }
 
 .burger-page {
+  display: flex;
   position: fixed;
   top: 0;
   left: -768px;
@@ -42,6 +43,9 @@ body {
   background-color: #2D303A;
   width: 278px;
   box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+}
+.burger-page_close {
+  width: 490px;
 }
 
 .burger-page_nav {
@@ -150,12 +154,10 @@ body {
 .slider_img {
   max-width: 60vw;
   object-fit: cover;
+  max-height: 27.057079318vw;
 }
 .slider_img__hor {
   display: none;
-}
-.slider_img__ver {
-  margin: 15px 0px;
 }
 .slider_arrow {
   display: flex;

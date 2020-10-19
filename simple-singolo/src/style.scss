@@ -32,6 +32,7 @@ body {
 }
 
 .burger-page {
+    display: flex;
     position: fixed;
     top: 0;
     left: -768px;
@@ -58,6 +59,10 @@ body {
         background-color: $dark_color;
         width: 278px;
         box-shadow: 0px -40px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    &_close {
+        width: 490px;
     }
 }
 
@@ -180,6 +185,7 @@ body {
     &_img {
         max-width: 60vw;
         object-fit: cover;
+        max-height: vw(365);
         
         &__hor {
             display: none;
