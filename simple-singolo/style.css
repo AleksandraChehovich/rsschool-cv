@@ -121,7 +121,7 @@ body {
 }
 .link__red:hover {
   color: #F06C64;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 .navigation {
@@ -131,6 +131,9 @@ body {
 }
 .navigation_item {
   padding-left: 20px;
+}
+.navigation_item__active {
+  color: #F06C64;
 }
 
 .slider {
@@ -146,9 +149,13 @@ body {
 }
 .slider_img {
   max-width: 60vw;
+  object-fit: cover;
 }
 .slider_img__hor {
   display: none;
+}
+.slider_img__ver {
+  margin: 15px 0px;
 }
 .slider_arrow {
   display: flex;
@@ -268,11 +275,11 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
-.filter_item:active {
+.filter_item__active {
   color: #DEDEDE;
   border: 1px solid #DEDEDE;
 }
-.filter_item:active__active {
+.filter_item:active {
   color: #DEDEDE;
   border: 1px solid #DEDEDE;
 }

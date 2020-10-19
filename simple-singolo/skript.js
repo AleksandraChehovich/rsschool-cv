@@ -33,7 +33,10 @@ function moveRight () {
 }
 
 let totalFilter = document.getElementsByClassName("filter_item"),
+    totalNavItems = document.getElementsByClassName("navigation_item"),
     portfolioImages = document.querySelector("portfolio_images");
+
+   
 
     function showActiveFilter (event) {
         event.preventDefault();
@@ -43,7 +46,24 @@ let totalFilter = document.getElementsByClassName("filter_item"),
         }
         event.currentTarget.classList.add("filter_item__active");
     }
+
+
+
+    function showActiveNav (event) {
+        event.preventDefault();
+
+        for (let i = 0; i < totalNavItems.length; i++) {
+            totalNavItems[i].classList.remove("navigation_item__active");
+        }
+        event.currentTarget.classList.add("navigation_item__active");
+    }
+
 for (let i = 0; i < totalFilter.length; i++) {
 
     totalFilter[i].addEventListener('click', showActiveFilter, false);
+}
+
+for (let i = 0; i <  totalNavItems.length; i++) {
+
+    totalNavItems[i].addEventListener('click', showActiveNav, false);
 }

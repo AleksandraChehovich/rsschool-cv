@@ -146,7 +146,7 @@ body {
 
     &__red:hover {
         color: $lite_color;
-        transition: 0.5s;
+        transition: 0.2s;
     }
 }
 
@@ -157,6 +157,10 @@ body {
 
     &_item {
         padding-left: 20px;
+
+        &__active {
+            color: $lite_color;
+        }
     }
 }
 
@@ -175,10 +179,12 @@ body {
 
     &_img {
         max-width: 60vw;
+        object-fit: cover;
         
         &__hor {
             display: none;
         }
+
     }
 
     &_arrow {
@@ -314,15 +320,17 @@ body {
          padding: 5px;
          margin-right: 10px;
          cursor: pointer;
+         
+        &__active {
+            color: #DEDEDE;
+            border: 1px solid #DEDEDE;
+        }
 
         &:active {
             color: #DEDEDE;
             border: 1px solid #DEDEDE;
 
-        &__active {
-            color: #DEDEDE;
-            border: 1px solid #DEDEDE;
-        }
+        
         }
     }
 }
