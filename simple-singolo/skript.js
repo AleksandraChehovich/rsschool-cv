@@ -32,18 +32,18 @@ function moveRight () {
         }  
 }
 
-let triggerToOppen = document.getElementById("trigger"),
-    triggerToClose = document.getElementById("trigger1");
+let totalFilter = document.getElementsByClassName("filter_item"),
+    portfolioImages = document.querySelector("portfolio_images");
 
+    function showActiveFilter (event) {
+        event.preventDefault();
 
-// function openBurgerMenu() {
-//    if (triggerToOppen.checked) {
-//      return  document.getElementById("burger-page").style.display = "block";
-//    } else document.getElementById("burger-page").style.display = "none";
-// }
+        for (let i = 0; i < totalFilter.length; i++) {
+            totalFilter[i].classList.remove("filter_item__active");
+        }
+        event.currentTarget.classList.add("filter_item__active");
+    }
+for (let i = 0; i < totalFilter.length; i++) {
 
-// function closeBurgerMenu() {
-//     if (triggerToClose.checked) {
-//       return document.getElementById("burger-page").style.display = "none";
-//    } else document.getElementById("burger-page").style.display = "block";
-// }
+    totalFilter[i].addEventListener('click', showActiveFilter, false);
+}

@@ -20,13 +20,14 @@ body {
 .burger-page {
   position: fixed;
   top: 0;
-  left: -500px;
+  left: -768px;
   bottom: 0;
   right: 0;
   background: rgba(40, 46, 49, 0.6);
   opacity: 1;
   z-index: 3;
-  width: 500px;
+  width: 768px;
+  transition: left 17ms ease-in-out 0.2s;
 }
 .burger-page_header {
   display: flex;
@@ -85,6 +86,11 @@ body {
 .header {
   background: #2D303A;
   border-bottom: 6px solid #323746;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
 }
 .header_wrapper {
   display: flex;
@@ -131,6 +137,7 @@ body {
   background: #F06C64;
   border-bottom: 6px solid #EA676B;
   text-align: center;
+  margin-top: 89px;
 }
 .slider_wrapper {
   position: relative;
@@ -262,6 +269,10 @@ body {
   cursor: pointer;
 }
 .filter_item:active {
+  color: #DEDEDE;
+  border: 1px solid #DEDEDE;
+}
+.filter_item:active__active {
   color: #DEDEDE;
   border: 1px solid #DEDEDE;
 }

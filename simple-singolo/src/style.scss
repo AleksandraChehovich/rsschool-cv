@@ -34,13 +34,14 @@ body {
 .burger-page {
     position: fixed;
     top: 0;
-    left: -500px;
+    left: -768px;
     bottom: 0;
     right: 0;
     background: rgba(40, 46, 49, 0.6);
     opacity: 1;
     z-index: 3;
-    width: 500px;
+    width: 768px;
+    transition: left 17ms ease-in-out 0.2s;
 
     &_header {
         display: flex;
@@ -106,7 +107,11 @@ body {
 .header {
     background: $dark_color;
     border-bottom: 6px solid #323746;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 
     &_wrapper {
     display: flex;
@@ -159,6 +164,7 @@ body {
     background: $lite_color;
     border-bottom: 6px solid #EA676B;
     text-align: center;
+    margin-top: 89px;
     
 
     &_wrapper {
@@ -309,11 +315,16 @@ body {
          margin-right: 10px;
          cursor: pointer;
 
-         &:active {
+        &:active {
+            color: #DEDEDE;
+            border: 1px solid #DEDEDE;
+
+        &__active {
             color: #DEDEDE;
             border: 1px solid #DEDEDE;
         }
-     }
+        }
+    }
 }
 
 .footer {
