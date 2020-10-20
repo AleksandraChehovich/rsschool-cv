@@ -25,7 +25,7 @@
                     <a href="#slider" class="navigation_item link link__red">Home</a>
                     <a href="#service" class="navigation_item link link__red">Services</a>
                     <a href="#portfolio" class="navigation_item link link__red">Portfolio</a>
-                    <a href="#" class="navigation_item link link__red">About</a>
+                    <a href="#contacts" class="navigation_item link link__red">About</a>
                     <a href="#contacts" class="navigation_item link link__red">Contact</a>
                 </nav>
                 <div class="burger-page" id="burger-page">
@@ -54,23 +54,23 @@
             </div>
         </header>
         <main class="main">
-            <section class="slider main_section" id="slider">
+            <section class="slider main_section" id="slider" data-anchor="home">
                 <div class="wrapper slider_wrapper">
                     <img class="slider_img slider_img__ver" src="./img/slider-content.png" alt="1">
                     <img class="slider_img slider_img__hor" src="./img/Slider.png" alt="1">
-                    <a href="#" class="slider_arrow slider_arrow__right link" id="slider_arrow__right">
+                    <a href="" class="slider_arrow slider_arrow__right link" id="slider_arrow__right">
                         <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.697849 22.9923C-0.233349 23.9092 -0.232514 25.3553 0.699743 26.2713C1.68867 27.2429 3.33657 27.2429 4.32549 26.2713L15.0449 15.7392C16.3184 14.4879 16.3184 12.5121 15.0449 11.2608L4.32549 0.728735C3.33657 -0.242913 1.68867 -0.242911 0.699746 0.728737C-0.232511 1.64471 -0.233347 3.09077 0.69785 4.00769L8.06645 11.2634C9.33653 12.514 9.33653 14.486 8.06645 15.7366L0.697849 22.9923Z" fill="#E94348"/>
                         </svg>                        
                     </a>
-                    <a href="#" class="slider_arrow slider_arrow__left link" id="slider_arrow__left">
+                    <a href="" class="slider_arrow slider_arrow__left link" id="slider_arrow__left">
                         <svg class="slider_arrow-svg width="16" height="27" viewBox="0 0 16 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M15.3022 4.0077C16.2333 3.09077 16.2325 1.64471 15.3003 0.728736C14.3113 -0.242912 12.6634 -0.242912 11.6745 0.728737L0.955147 11.2608C-0.318384 12.5121 -0.318381 14.4879 0.955149 15.7392L11.6745 26.2713C12.6634 27.2429 14.3113 27.2429 15.3003 26.2713C16.2325 25.3553 16.2333 23.9092 15.3022 22.9923L7.93355 15.7366C6.66347 14.486 6.66347 12.514 7.93355 11.2634L15.3022 4.0077Z" fill="#E94348"/>
                         </svg>                       
                     </a>
                 </div>
             </section>
-            <section class="services main_section" id="service">
+            <section class="services main_section" id="service" data-anchor="service">
                 <div class="wrapper services_wrapper">
                     <h2 class="services_header head">Our Services</h2>
                     <p class="services_description description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </section>
-            <section class="portfolio main_section" id="portfolio">
+            <section class="portfolio main_section" id="portfolio" data-anchor="portfolio">
                 <div class="wrapper portfolio_wrapper">
                     <h2 class="portfolio_header head">Portfolio</h2>
                     <p class="portfolio_description description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -131,7 +131,7 @@
                 </div>
             </section>
         </main>
-        <footer class="footer" id="contacts">
+        <footer class="footer" id="contacts" data-anchor="contacts">
             <div class="wrapper footer_wrapper">
                 <p class="footer_copyrights">© Copyright 2013</p>
                 <div class="footer_social social">
