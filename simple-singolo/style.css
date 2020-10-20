@@ -154,7 +154,7 @@ body {
 .slider_img {
   max-width: 60vw;
   object-fit: cover;
-  max-height: 27.057079318vw;
+  height: 27.057079318vw;
 }
 .slider_img__hor {
   display: none;

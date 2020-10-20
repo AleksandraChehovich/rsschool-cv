@@ -185,7 +185,7 @@ body {
     &_img {
         max-width: 60vw;
         object-fit: cover;
-        max-height: vw(365);
+        height: vw(365);
         
         &__hor {
             display: none;
