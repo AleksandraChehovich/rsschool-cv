@@ -60,6 +60,10 @@ let totalFilter = document.getElementsByClassName("filter_item"),
 for (let i = 0; i < totalFilter.length; i++) {
 
     totalFilter[i].addEventListener('click', showActiveFilter, false);
+    totalFilter[i].addEventListener('click', filterPortfolioImages, false);
+    totalFilter[i].addEventListener('click', showAllImagesWithoutFilters, false);
+    
+    
 }
 
 for (let i = 0; i <  totalNavItems.length; i++) {
@@ -82,21 +86,12 @@ function openBurgerMenu (event) {
     document.querySelector(".burger-page").style.left = "0"
 }
 
-console.log(burgerOpen);
-
  burgerHide.addEventListener('click', closeBurgerMenu);
  
  burgerOpen.addEventListener('click', openBurgerMenu);
 
 burgerClose.addEventListener('click', closeBurgerMenu);
 
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      let j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-
-    } return array;
-  }
 
   const anchors = document.querySelectorAll('a[href*="#"]')
 
@@ -112,4 +107,27 @@ function shuffle(array) {
       })
     })
   }
- 
+
+  function showAllImagesWithoutFilters (event) {
+    let portfolioItems = document.getElementsByClassName("images_item");
+    for (let i = 0; i < portfolioItems.length; i++) {
+        if (event.target.classList.contains("all")) {
+            portfolioItems[i].classList.remove("images_item__hidden");
+          }
+    }
+
+  } 
+
+  function filterPortfolioImages (event) {
+      let portfolioItems = document.getElementsByClassName("images_item");
+      for (let i = 0; i < portfolioItems.length; i++) {
+          portfolioItems[i].classList.remove("images_item__hidden");
+          if (portfolioItems[i].classList.contains("web") != event.target.classList.contains("web")) {
+            portfolioItems[i].classList.add("images_item__hidden");
+          } else if (portfolioItems[i].classList.contains("graf") != event.target.classList.contains("graf")) {
+            portfolioItems[i].classList.add("images_item__hidden");
+          } else if (portfolioItems[i].classList.contains("art") != event.target.classList.contains("art")) {
+            portfolioItems[i].classList.add("images_item__hidden");
+          }
+      }
+  } 

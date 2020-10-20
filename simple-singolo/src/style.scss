@@ -310,6 +310,10 @@ body {
 
     &_item {
         width: 100%;
+
+        &__hidden {
+            display: none;
+        }
     }
 }
 
