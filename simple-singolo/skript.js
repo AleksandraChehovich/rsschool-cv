@@ -1,20 +1,17 @@
-const slideLeft = document.getElementById("slider_arrow__left"),
-      slideRight = document.getElementById("slider_arrow__right"),
-      totalFilter = document.getElementsByClassName("filter_item"),
-      totalNavItems = document.getElementsByClassName("navigation_item"),
-      portfolioImages = document.querySelector("portfolio_images"),
-      portfolioArray = document.getElementsByClassName("images_item"),
-      anchors = document.querySelectorAll('a[href*="#"]'),
-      burgerHide = document.querySelector(".burger-page_wrapper"),
-      burgerOpen = document.querySelector(".burger_label"),
-      burgerClose = document.querySelector(".burger-page_close");
-
+const slideLeft = document.getElementById("slider_arrow__left");
+const slideRight = document.getElementById("slider_arrow__right");
+const totalFilter = document.getElementsByClassName("filter_item");
+const totalNavItems = document.getElementsByClassName("navigation_item");
+const portfolioImages = document.querySelector("portfolio_images");
+const portfolioArray = document.getElementsByClassName("images_item");
+const anchors = document.querySelectorAll('a[href*="#"]');
+const burgerHide = document.querySelector(".burger-page_wrapper");
+const burgerOpen = document.querySelector(".burger_label");
+const burgerClose = document.querySelector(".burger-page_close");
 
 let   totalImg = document.getElementsByClassName("slider_img");
 let   indexForSlider = 0;
 let   blockList = document.querySelectorAll("[data-anchor]");
-
-
 
 //       Switching selector arrows
 
@@ -24,7 +21,6 @@ slideLeft.addEventListener('click', moveRight);
 //        Filter Portfolio Items
 
 for (let i = 0; i < totalFilter.length; i++) {
-
     totalFilter[i].addEventListener('click', showActiveFilter, false);
     totalFilter[i].addEventListener('click', filterPortfolioImages, false);
     totalFilter[i].addEventListener('click', showAllImagesWithoutFilters, false);
@@ -33,7 +29,6 @@ for (let i = 0; i < totalFilter.length; i++) {
 //          Colored navigation menu items
 
 for (let i = 0; i <  totalNavItems.length; i++) {
-
     totalNavItems[i].addEventListener('click', showActiveNav, false);
 }
 
@@ -62,23 +57,23 @@ for (let anchor of anchors) {
 
 window.addEventListener('scroll', (event) => {
       event.preventDefault();
-    for (let i = 0; i < blockList.length; i++) {
+      for (let i = 0; i < blockList.length; i++) {
 
-        
+            totalNavItems[i].classList.remove("navigation_item__active");
+    }
+
+    for (let i = 0; i < blockList.length; i++) {
 
         let CoordinatsOfBlockList = blockList[i].getBoundingClientRect();
 
         if (CoordinatsOfBlockList.top < 250 && CoordinatsOfBlockList.top > -270) {
 
             totalNavItems[i].classList.add("navigation_item__active");
-            
-        } else 
-            totalNavItems[i].classList.remove("navigation_item__active");
-
+            break;
+        } 
     }
 }
 )
-
 
 function moveLeft (event) {
     event.preventDefault();
