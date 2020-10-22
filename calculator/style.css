@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: azure;
+  font-family: "Source Code Pro", monospace;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 40px;
+}
+
+.calc {
+  display: inline-block;
+  width: 320px;
+  padding: 15px;
+  border-radius: 45px;
+  background-color: deeppink;
+  box-shadow: 0px -2px 20px 0px rgba(0, 0, 0, 0.5), inset 3px 2px 3px 0px #ffc0e2, 4px 5px 0px 0px deeppink, 6px 4px 13px 0px rgba(0, 0, 0, 0.5);
+}
+.calc_display {
+  background-color: black;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  border-radius: 35px 35px 0 0;
+  box-shadow: 2px 1px 4px 0px #f0d1e2, inset 4px 2px 20px 0px rgba(0, 0, 0, 0.8), inset 3px 0px 0px 0px #ff1493;
+}
+.calc_display__input {
+  font-family: "Orbitron", sans-serif;
+  text-align: right;
+  width: 99%;
+  font-size: 31px;
+  box-shadow: inset 2px -6px 20px 0px rgba(0, 0, 0, 0.8);
+}
+.calc_buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 7px;
+  background-color: yellowgreen;
+  padding-top: 45px;
+  padding-bottom: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 0 0 35px 35px;
+  box-shadow: inset 1px 0px 7px 1px rgba(0, 0, 0, 0.5), 2px 1px 4px 0px #f0d1e2, inset 1px 1px 20px 0px rgba(0, 0, 0, 0.5), inset 3px 0px 0px 0px #ff1493;
+}
+.calc_button {
+  background-color: black;
+  color: white;
+  border: black;
+  border-radius: 50%;
+  padding: 15px;
+  cursor: pointer;
+  width: 60px;
+  font-size: 15px;
+  font-family: "Orbitron", sans-serif;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px black, inset 1px -1px 3px 1px rgba(250, 250, 250, 0.5);
+}
+.calc_button:focus {
+  outline: none;
+  margin-top: 2px;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.5), inset 1px 0px 3px 1px rgba(250, 250, 250, 0.5);
+}
+.calc_button:focus ~ .calc_buttons {
+  grid-gap: 5px;
+}
+.calc_button__result {
+  grid-area: 4/4/6;
+  border-radius: 12%;
+}
+
+/*# sourceMappingURL=style.css.map */
