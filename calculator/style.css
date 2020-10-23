@@ -16,6 +16,9 @@ body {
 .header {
   margin-bottom: 40px;
 }
+.header_result {
+  display: none;
+}
 
 .calc {
   display: inline-block;
@@ -23,7 +26,7 @@ body {
   padding: 15px;
   border-radius: 45px;
   background-color: deeppink;
-  box-shadow: 0px -2px 20px 0px rgba(0, 0, 0, 0.5), inset 3px 2px 3px 0px #ffc0e2, 4px 5px 0px 0px deeppink, 6px 4px 13px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 4px 7px 0px 0px #be0f6d, inset 3px 2px 3px 0px #ffc0e2, 4px 4px 0px 0px deeppink, 14px 15px 6px 0px rgba(100, 83, 83, 0.5);
 }
 .calc_display {
   background-color: black;
@@ -37,6 +40,8 @@ body {
 .calc_display__input {
   font-family: "Orbitron", sans-serif;
   text-align: right;
+  background-color: #dbdfe0;
+  color: black;
   width: 99%;
   font-size: 31px;
   box-shadow: inset 2px -6px 20px 0px rgba(0, 0, 0, 0.8);
@@ -57,13 +62,13 @@ body {
   background-color: black;
   color: white;
   border: black;
-  border-radius: 50%;
+  border-radius: 18%;
   padding: 15px;
   cursor: pointer;
   width: 60px;
   font-size: 15px;
   font-family: "Orbitron", sans-serif;
-  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px black, inset 1px -1px 3px 1px rgba(250, 250, 250, 0.5);
+  box-shadow: 5px 5px 6px 1px rgba(0, 0, 0, 0.5), 1px 2px 0px 0px black, inset 2px 0px 3px 1px rgba(172, 139, 139, 0.5);
 }
 .calc_button:focus {
   outline: none;
