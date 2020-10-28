@@ -5,9 +5,10 @@ const totalNavItems = document.getElementsByClassName("navigation_item");
 const portfolioImages = document.querySelector("portfolio_images");
 const portfolioArray = document.getElementsByClassName("images_item");
 const anchors = document.querySelectorAll('a[href*="#"]');
-const burgerHide = document.querySelector(".burger-page_wrapper");
 const burgerOpen = document.querySelector(".burger_label");
 const burgerClose = document.querySelector(".burger-page_close");
+const burgerNavigation = document.getElementsByClassName("navigation_item__burger");
+const svgBurgerClose = document.querySelector(".burger_label__close");
 
 let   totalImg = document.getElementsByClassName("slider_img");
 let   indexForSlider = 0;
@@ -33,8 +34,11 @@ for (let i = 0; i <  totalNavItems.length; i++) {
 }
 
 //       Operations with burger menu
+for (let i = 0; i < burgerNavigation.length; i++) {
+    burgerNavigation[i].addEventListener('click', closeBurgerMenu);
+}
 
-burgerHide.addEventListener('click', closeBurgerMenu);
+svgBurgerClose.addEventListener('click', closeBurgerMenu);
  
 burgerOpen.addEventListener('click', openBurgerMenu);
 
@@ -44,9 +48,9 @@ burgerClose.addEventListener('click', closeBurgerMenu);
 
 for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+    e.preventDefault();
       
-    const blockID = anchor.getAttribute('href').substr(1)
+    const blockID = anchor.getAttribute('href').substr(1);
       
     document.getElementById(blockID).scrollIntoView({
     behavior: 'smooth',
@@ -56,7 +60,7 @@ for (let anchor of anchors) {
 }
 
 window.addEventListener('scroll', (event) => {
-      event.preventDefault();
+
       for (let i = 0; i < blockList.length; i++) {
 
             totalNavItems[i].classList.remove("navigation_item__active");
@@ -125,13 +129,11 @@ function showActiveNav (event) {
     event.currentTarget.classList.add("navigation_item__active");
 }
 
-function closeBurgerMenu (event) {
-    event.preventDefault();
+function closeBurgerMenu () {
     document.querySelector(".burger-page").style.left = "-768px";
 }
 
-function openBurgerMenu (event) {
-    event.preventDefault();
+function openBurgerMenu () {
     document.querySelector(".burger-page").style.left = "0"
 }
 
