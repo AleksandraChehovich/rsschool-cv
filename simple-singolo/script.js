@@ -3,7 +3,7 @@ const slideRight = document.getElementById("slider_arrow__right");
 const totalFilter = document.getElementsByClassName("filter_item");
 const totalNavItems = document.getElementsByClassName("navigation_item");
 const portfolioImages = document.querySelector("portfolio_images");
-const portfolioArray = document.getElementsByClassName("images_item");
+const portfolioArray = document.querySelectorAll(".images_item");
 const anchors = document.querySelectorAll('a[href*="#"]');
 const burgerOpen = document.querySelector(".burger_label");
 const burgerClose = document.querySelector(".burger-page_close");
@@ -12,12 +12,13 @@ const svgBurgerClose = document.querySelector(".burger_label__close");
 
 let   totalImg = document.getElementsByClassName("slider_img");
 let   indexForSlider = 0;
+let   slider = document.getElementById("slider");
 let   blockList = document.querySelectorAll("[data-anchor]");
 
 //       Switching selector arrows
 
-slideRight.addEventListener('click', moveLeft);
-slideLeft.addEventListener('click', moveRight);
+ slideRight.addEventListener('click', moveLeft);
+ slideLeft.addEventListener('click', moveRight);
 
 //        Filter Portfolio Items
 
@@ -25,6 +26,12 @@ for (let i = 0; i < totalFilter.length; i++) {
     totalFilter[i].addEventListener('click', showActiveFilter, false);
     totalFilter[i].addEventListener('click', filterPortfolioImages, false);
     totalFilter[i].addEventListener('click', showAllImagesWithoutFilters, false);
+}
+
+for (let i = 0; i < portfolioArray.length; i++) {    
+    if (i >= 12) {
+        portfolioArray[i].remove();
+    }
 }
 
 //          Colored navigation menu items
@@ -61,13 +68,11 @@ for (let anchor of anchors) {
 
 window.addEventListener('scroll', (event) => {
 
-      for (let i = 0; i < blockList.length; i++) {
-
-            totalNavItems[i].classList.remove("navigation_item__active");
-    }
-
     for (let i = 0; i < blockList.length; i++) {
 
+        totalNavItems[i].classList.remove("navigation_item__active");
+    }
+    for (let i = 0; i < blockList.length; i++) {
         let CoordinatsOfBlockList = blockList[i].getBoundingClientRect();
 
         if (CoordinatsOfBlockList.top < 250 && CoordinatsOfBlockList.top > -270) {
@@ -87,7 +92,7 @@ function moveLeft (event) {
     if (indexForSlider >= 1) {
         totalImg[indexForSlider].style.display = "none";
         totalImg[--indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = " #EA676B";
+        slider.style.backgroundColor = " #F06C64";
     } else   if  (indexForSlider === 0) {
         totalImg[indexForSlider].style.display = "none";
         totalImg[++indexForSlider].style.display = "inline";
@@ -103,7 +108,7 @@ function moveRight (event) {
     if (indexForSlider >= 1) {
         totalImg[indexForSlider].style.display = "none";
         totalImg[--indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = " #EA676B";
+        slider.style.backgroundColor = " #F06C64";
     } else   if  (indexForSlider === 0) {
         totalImg[indexForSlider].style.display = "none";
         totalImg[++indexForSlider].style.display = "inline";
@@ -142,7 +147,7 @@ function showAllImagesWithoutFilters (event) {
     for (let i = 0; i < portfolioItems.length; i++) {
         if (event.target.classList.contains("all")) {
             portfolioItems[i].classList.remove("images_item__hidden");
-          }
+        }
     }
 } 
 
