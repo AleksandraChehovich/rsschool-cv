@@ -3,7 +3,7 @@ const plans = document.querySelector('.plans');
 
 
 
-let setBackgroundImg = () => {
+const setBackgroundImg = () => {
     let now = new Date ();
     let hour = now.getHours();
     if (hour >= 12 && hour < 18) {
@@ -17,13 +17,13 @@ let setBackgroundImg = () => {
     };
 }
 
-let addFirstZero = (num) => {
+const addFirstZero = (num) => {
     if (+num < 10) {
         return num = '0' + num;
     } else return num;
 }
 
-let setCurrentTime = () => {
+const setCurrentTime = () => {
     let now = new Date ();
     let hour = now.getHours();
     let minutes = now.getMinutes();
@@ -34,7 +34,7 @@ let setCurrentTime = () => {
     setTimeout(setCurrentTime, 1000);  
 }
 
-let getDay = (number) => {
+const getDay = (number) => {
     if (number === 0) {
         return 'Sanday';
     } else if (number === 1) {
@@ -52,7 +52,7 @@ let getDay = (number) => {
     };
 }
 
-let setCurrentDate = () => {
+const setCurrentDate = () => {
     let now = new Date ();
     let year = now.getFullYear();
     let day = now.getDay();
@@ -62,21 +62,21 @@ let setCurrentDate = () => {
     curDate.innerHTML = `${date}, ${month}, ${year} ${getDay(day)}`;
 }
 
-let setUserName = (event) => {
+const setUserName = (event) => {
     localStorage.setItem('name', event.target.innerText);
 }
 
-let getUserName = () => {
+const getUserName = () => {
     if (localStorage.getItem('name') === null) {
         name.textContent = '[Enter your name]';
     } else name.textContent = localStorage.getItem('name');
 }
 
-let setUserPlans = (event) => {
+const setUserPlans = (event) => {
     localStorage.setItem('plans', event.target.innerText);
 }
 
-let getUserPlans = () => {
+const getUserPlans = () => {
     if (localStorage.getItem('plans') === null) {
         plans.textContent = '[Enter your plans]';
     } else plans.textContent = localStorage.getItem('plans');
