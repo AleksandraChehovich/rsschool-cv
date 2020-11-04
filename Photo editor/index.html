@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="correct_wrapper">
+            <h2 class="header">Filters</h2>
+            <div class="inputs">
+                <span class="cor">Color</span>
+                <label for="color">
+                    <input type="color" class="inputs_item inputs_item__color" name="color" value="#0F1B07">
+                </label>
+                <span class="cor">Size</span>
+                <label for="size">
+                    <input type="range" class="inputs_item" name="size" min="10" max="100" value="30" data-sizing="%">
+                </label>
+                <span class="cor">Contrast</span>
+                <label for="contrast">
+                    <input type="range" class="inputs_item" name="contrast" min="10" max="100" value="100" data-sizing="%">
+                </label>
+                <span class="cor">Invert</span>
+                <label for="invert">
+                    <input type="range" class="inputs_item" name="invert" min="0" max="100" value="0" data-sizing="%">
+                </label>
+                <span class="cor">Sepia</span>
+                <label for="sepia">
+                    <input type="range" class="inputs_item" name="sepia" min="0" max="100" value="0" data-sizing="%">
+                </label>
+                <span class="cor">Grayscale</span>
+                <label for="grayscale">
+                    <input type="range" class="inputs_item" name="grayscale" min="0" max="100" value="0" data-sizing="%">
+                </label>
+                <span class="cor">Hue-rotate</span>
+                <label for="hue-rotate">
+                    <input type="range" class="inputs_item" name="hue-rotate" min="0" max="100" value="0" data-sizing="deg">
+                </label>
+            </div>
+        </div>
+        
+        <div class="image-wrapper">
+            <div class="image">
+                <img src="./img/1_849.jpg" alt="photo">
+            </div>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
