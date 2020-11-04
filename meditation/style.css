@@ -73,6 +73,10 @@
     border: 1px solid whitesmoke;
 }
 
+.nav_button:focus {
+    outline: none;
+}
+
 .timer_wrapper {
     display: flex;
 }

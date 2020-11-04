@@ -6,7 +6,7 @@ const button = document.querySelector('.button_svg');
 const video = document.querySelector('video');
 const track = document.querySelector('.track');
 const timerSmall = document.querySelector('.time-input');
-let currentDuration = Infinity;
+let currentDuration = 300;
 const timerBtn = document.querySelectorAll('.timer');
 
 
