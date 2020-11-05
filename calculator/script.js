@@ -11,10 +11,15 @@ let inMemory = '';
 
 calcCase.onclick = function(event) {
     let button = event.target;
-    (button.dataset.number) ? enterDataNumber(button.textContent) :
-    (button.dataset.operation) ? enterOperation(button.textContent) :
-    (button.dataset.dot) ? putDecimalPoint() :
-    (button.dataset.clear) ? clearDisplayAndMemory() : null;
+    if (button.dataset.number) {
+        enterDataNumber(button.textContent);
+    } else if (button.dataset.operation) {
+        enterOperation(button.textContent);
+    } else if (button.dataset.dot) {
+        putDecimalPoint();
+    } else if (button.dataset.clear) {
+        clearDisplayAndMemory();
+    } else return null;
 }
 
 const enterDataNumber = (number) => {  
