@@ -17,11 +17,7 @@ const setBackgroundImg = () => {
     };
 }
 
-const addFirstZero = (num) => {
-    if (+num < 10) {
-        return num = '0' + num;
-    } else return num;
-}
+const addFirstZero = (num) => num.toString().padStart(2, '0');
 
 const setCurrentTime = () => {
     let now = new Date ();
@@ -35,21 +31,8 @@ const setCurrentTime = () => {
 }
 
 const getDay = (number) => {
-    if (number === 0) {
-        return 'Sanday';
-    } else if (number === 1) {
-        return 'Monday';
-    } else if (number === 2) {
-        return 'Tuesday';
-    } else if (number === 3) {
-        return 'Wednesday';
-    } else if (number === 4) {
-        return 'Thursday';
-    } else if (number === 5) {
-        return 'Friday';
-    } else if (number === 6) {
-        return 'Saturday';
-    };
+    const days = ['Sanday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[number];
 }
 
 const setCurrentDate = () => {
@@ -63,7 +46,15 @@ const setCurrentDate = () => {
 }
 
 const setUserName = (event) => {
-    localStorage.setItem('name', event.target.innerText);
+    if (event.type === 'keypress') {
+        if (event.keyCode == 13) {
+            localStorage.setItem('name', event.target.innerText);
+            name.blur();
+        }
+    } else {
+        localStorage.setItem('name', event.target.innerText);
+        
+    };
 }
 
 const getUserName = () => {
@@ -73,7 +64,14 @@ const getUserName = () => {
 }
 
 const setUserPlans = (event) => {
-    localStorage.setItem('plans', event.target.innerText);
+    if (event.type === 'keypress') {
+        if (event.keyCode == 13) {
+            localStorage.setItem('plans', event.target.innerText);
+            plans.blur();
+        }
+    } else {
+        localStorage.setItem('plans', event.target.innerText);
+    };
 }
 
 const getUserPlans = () => {
