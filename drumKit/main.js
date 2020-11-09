@@ -1,6 +1,6 @@
 const buttons = document.querySelectorAll('.button');
 
-const play = (btn, audio, key) => {
+const play = (btn, audio) => {
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
@@ -22,7 +22,7 @@ const playByClick = (e) => {
     const btn = e.target;
     const key = btn.id;
     const audio = document.querySelector(`audio[data-key="${key}"]`);
-    play(btn, audio, key);
+    play(btn, audio);
 }
 
 buttons.forEach(button => button.addEventListener('click', playByClick));
