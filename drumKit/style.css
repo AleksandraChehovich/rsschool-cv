@@ -43,3 +43,18 @@ body {
     box-shadow: 4px 2px 2px 0px #615a5a40, 2px 2px 3px 0px #c2b8b8, 0px 0px 0px 5px #fcfcfc, 1px 4px 19px 0px #615a5a, inset -1px -2px 11px 8px #c466c4, inset 1px 14px 3px 1px #fff0ff38, inset 1px 7px 6px 1px #fff0ff75, 0px 4px 7px 0px #000000;
     padding-top: 28px;
 }
+
+/* @keyframes push {
+from {box-shadow: 4px 2px 2px 0px #615a5a40, 2px 2px 3px 0px #c2b8b8, 0px 0px 0px 5px #fcfcfc, 3px 3px 19px 0px #615a5a, inset 1px -4px 5px 3px #c466c4, inset 2px 15px 3px 1px #fff0ff38, inset 1px 7px 6px 1px #fff0ff75, 0px 4px 7px 0px #000000;
+    transform: scale(1);
+    padding-top: 25px;
+}
+to {box-shadow: 4px 2px 2px 0px #615a5a40, 2px 2px 3px 0px #c2b8b8, 0px 0px 0px 5px #fcfcfc, 1px 4px 19px 0px #615a5a, inset -1px -2px 11px 8px #c466c4, inset 1px 14px 3px 1px #fff0ff38, inset 1px 7px 6px 1px #fff0ff75, 0px 4px 7px 0px #000000;
+    transform: scale(.99);
+    padding-top: 28px;
+}
+}
+
+.button:active {
+    animation: push 0.1s;
+} */

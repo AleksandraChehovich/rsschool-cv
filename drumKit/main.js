@@ -1,12 +1,16 @@
 const buttons = document.querySelectorAll('.button');
 
-const playSound = (e) => {
-    const btn = document.querySelector(`div[data-key="${e.keyCode}"]`);
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+const play = (btn, audio, key) => {
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
     btn.classList.add('play');
+}
+
+const playSound = (e) => {
+    const btn = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    play(btn, audio);
 }
 
 const removeClass = (e) => {
@@ -18,10 +22,7 @@ const playByClick = (e) => {
     const btn = e.target;
     const key = btn.id;
     const audio = document.querySelector(`audio[data-key="${key}"]`);
-    if (!audio) return;
-    audio.currentTime = 0;
-    audio.play();
-    btn.classList.add('play');
+    play(btn, audio, key);
 }
 
 buttons.forEach(button => button.addEventListener('click', playByClick));
