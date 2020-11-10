@@ -1,6 +1,9 @@
 const panels = document.querySelectorAll('.panel');
 
 function open () {
+    for (let i = 0; i < panels.length; i++) {
+        panels[i].classList.remove('active');
+    }
     this.classList.toggle('active');
 }
 
