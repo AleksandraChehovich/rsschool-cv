@@ -9,9 +9,13 @@ const timerSmall = document.querySelector('.time-input');
 const navigation = document.querySelector('.nav_menu');
 const timerBtn = document.querySelectorAll('.timer');
 let currentDuration = 300;
+let myTimer;
+let currentTime = 0;
 
 const play = (btn) => {
     if (btn.classList.contains('active')) {
+ //       currentTime = 0;
+        clearInterval(myTimer);
         pauseMedia();
         btn.classList.remove('active');
         btn.children[0].src = './svg/play.svg';
@@ -20,6 +24,7 @@ const play = (btn) => {
             buttons[i].classList.remove('active');
             buttons[i].children[0].src = './svg/play.svg';
         }
+        getSec();
         playMedia()
         btn.classList.add('active');
         btn.children[0].src = './svg/stop.svg';
@@ -51,24 +56,31 @@ const closeMenu = () => {
 
 const addFirstZero = (num) => num.toString().padStart(2, '0');
 
+// track.ontimeupdate = function() {
+//     let currentTime = track.currentTime;
+//     let residual = currentDuration - currentTime;
+//     let min = Math.floor(residual / 60);
+//     let sec = Math.floor(residual % 60);
+//     timerSmall.textContent = `${addFirstZero(min)}:${addFirstZero(sec)}`;
+    // if (currentTime > currentDuration) {
+    //     pauseMedia();
+    //     track.currentTime = 0;
+    // }
+// }
 
-track.ontimeupdate = function() {
-    let currentTime = track.currentTime;
-    let residual = currentDuration - currentTime;
-    let min = Math.floor(residual / 60);
-    let sec = Math.floor(residual % 60);
-    timerSmall.textContent = `${addFirstZero(min)}:${addFirstZero(sec)}`;
-    if (currentTime > currentDuration) {
-        pauseMedia();
-        track.currentTime = 0;
-    }
-}
-
-const setTimer = () => {
-    let startTime = timerBtn.getAttribute('data-time');
-    let  minStart = Math.floor(startTime / 60);
-    let secStart = Math.floor(startTime % 60);
-        
+const getSec = () => {
+    clearInterval(myTimer);
+     myTimer = setInterval(function() {
+        currentTime += 1;
+        console.log(currentTime);
+        let  min = Math.floor((currentDuration - currentTime) / 60);
+        let sec = Math.floor((currentDuration - currentTime) % 60);
+        timerSmall.textContent = `${addFirstZero(min)}:${addFirstZero(sec)}`;
+        if (currentTime > currentDuration) {
+            pauseMedia();
+            currentTime = 0;
+        }
+    }, 1000)
 }
 
 navigation.onclick = function (event) {
@@ -82,7 +94,7 @@ navigation.onclick = function (event) {
         } else currentButton = currentButton.closest('button');
         track.src = currentButton.getAttribute('data-sound');
         video.src = currentButton.getAttribute('data-video');
-        play(currentButton);
+        play(currentButton);    
     } else return  null;
 }
 
