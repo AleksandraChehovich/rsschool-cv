@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const clearBtn = document.querySelector('.clear');
 const colorPanel = document.querySelector('.colors');
 const linesWidth = document.querySelectorAll('.lineWidth');
+const eraser = document.querySelector('.eraser');
 let colorBtn = 'white';
 let inProcess = false;
 let lastX = 0;
@@ -45,11 +46,14 @@ colorPanel.onclick = function (e) {
     let elem = e.target;
     if (elem.classList.contains('color')) {
         colorBtn = elem.dataset.color;
-        console.log(elem);
         linesWidth.forEach(line => line.style.backgroundColor = colorBtn);
     } else if (elem.classList.contains('lineWidth')) {
         ctx.lineWidth = elem.dataset.width;
     }
+}
+
+eraser.onclick = function (e) {
+    colorBtn = 'black';
 }
 
 canvas.addEventListener('mousemove', write);

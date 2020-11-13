@@ -115,3 +115,24 @@ body {
 .lilac {
     background-color: rgb(231, 16, 238);
 }
+
+.eraser_wrapp {
+    position: absolute;
+    background-color: black;
+    top: 470px;
+    left: 55px;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.eraser {
+    width: 30px;
+    height: 40px;
+    margin: 20px 40px 5px;
+    cursor: pointer;
+}
