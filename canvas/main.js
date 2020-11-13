@@ -2,6 +2,7 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const clearBtn = document.querySelector('.clear');
 const colorPanel = document.querySelector('.colors');
+const linesWidth = document.querySelectorAll('.lineWidth');
 let colorBtn = 'white';
 let inProcess = false;
 let lastX = 0;
@@ -42,10 +43,13 @@ function stopWriting() {
 
 colorPanel.onclick = function (e) {
     let elem = e.target;
-    if (elem.tagName === 'BUTTON') {
+    if (elem.classList.contains('color')) {
         colorBtn = elem.dataset.color;
-        console.log(colorBtn);
-    } 
+        console.log(elem);
+        linesWidth.forEach(line => line.style.backgroundColor = colorBtn);
+    } else if (elem.classList.contains('lineWidth')) {
+        ctx.lineWidth = elem.dataset.width;
+    }
 }
 
 canvas.addEventListener('mousemove', write);
