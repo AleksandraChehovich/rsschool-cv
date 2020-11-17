@@ -7,6 +7,9 @@ const max = 3.5;
 function chooseSpeed(e) {
     const Y = e.pageY - this.offsetTop;
     const perc = Y / this.offsetHeight;
+    if (perc > 1) {
+        perc = 1;
+    };
     const itemHeight = Math.round(perc * 100) + '%';
     controller.style.height = itemHeight;
     const playbackRate = perc * (max - min) + min;
