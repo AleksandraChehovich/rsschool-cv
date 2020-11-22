@@ -4,20 +4,21 @@ const controller = document.querySelector('.thumb');
 const min = 0.5;
 const max = 3.5;
 
-function chooseSpeed(e) {
-    const Y = e.pageY - this.offsetTop;
+function onChooseSpeed(event) {
+    const Y = event.pageY - this.offsetTop;
     const perc = Y / this.offsetHeight;
     if (perc > 1) {
         perc = 1;
     };
-    const itemHeight = Math.round(perc * 100) + '%';
+    
+    const itemHeight = `${Math.round(perc * 100)}%`;
     controller.style.height = itemHeight;
     const playbackRate = perc * (max - min) + min;
-    controller.innerHTML = playbackRate.toFixed(1) + ' x';
+    controller.innerHTML = `${playbackRate.toFixed(1)} x`;
 }
 
-function setSpeed(e) {
-    const Y = e.pageY - this.offsetTop;
+function setSpeed(event) {
+    const Y = event.pageY - this.offsetTop;
     const perc = Y / this.offsetHeight;   
     const playbackRate = perc * (max - min) + min;
     video.playbackRate = playbackRate;
@@ -33,6 +34,6 @@ function setSpeed(e) {
 
 // }
 
-speedControll.addEventListener('mousemove', chooseSpeed);
+speedControll.addEventListener('mousemove', onChooseSpeed);
 speedControll.addEventListener('mousedown', setSpeed);
 // speedControll.addEventListener('mouseout', getCurrentSpeed);
