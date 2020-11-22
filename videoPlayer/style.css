@@ -139,6 +139,7 @@ button:active {
 
 svg {
     fill: #fff;
+    cursor: pointer;
 }
 
 input {

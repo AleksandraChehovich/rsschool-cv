@@ -10,7 +10,7 @@ const btnsRewind = document.querySelectorAll('.slice');
 const wrapper = document.querySelector('.wrapper');
 let fullScreenFlag = false;
 
-function playAndUpdateBtn () {
+function onPlayOrPause () {
     if (video.paused) {
         video.play();
         playBtn.innerHTML = '<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-118"></use><path class="ytp-svg-fill" d="M 12,26 16,26 16,10 12,10 z M 21,26 25,26 25,10 21,10 z" id="ytp-id-118"></path></svg>';
@@ -20,7 +20,7 @@ function playAndUpdateBtn () {
     }
 }
 
-function volumeOff (e) {
+function toggleVolume (event) {
     if (video.volume === 0) {
         video.volume = soundInput.value;
         soundBtn.innerHTML = '<svg height="100%" version="1.1" viewBox="0 0 36 36" width="100%"><use class="ytp-svg-shadow" xlink:href="#ytp-id-14"></use><use class="ytp-svg-shadow" xlink:href="#ytp-id-15"></use><defs><clipPath id="ytp-svg-volume-animation-mask"><path d="m 14.35,-0.14 -5.86,5.86 20.73,20.78 5.86,-5.91 z"></path><path d="M 7.07,6.87 -1.11,15.33 19.61,36.11 27.80,27.60 z"></path><path class="ytp-svg-volume-animation-mover" d="M 9.09,5.20 6.47,7.88 26.82,28.77 29.66,25.99 z" transform="translate(0, 0)"></path></clipPath><clipPath id="ytp-svg-volume-animation-slash-mask"><path class="ytp-svg-volume-animation-mover" d="m -11.45,-15.55 -4.44,4.51 20.45,20.94 4.55,-4.66 z" transform="translate(0, 0)"></path></clipPath></defs><path class="ytp-svg-fill ytp-svg-volume-animation-speaker" clip-path="url(#ytp-svg-volume-animation-mask)" d="M8,21 L12,21 L17,26 L17,10 L12,15 L8,15 L8,21 Z M19,14 L19,22 C20.48,21.32 21.5,19.77 21.5,18 C21.5,16.26 20.48,14.74 19,14 ZM19,11.29 C21.89,12.15 24,14.83 24,18 C24,21.17 21.89,23.85 19,24.71 L19,26.77 C23.01,25.86 26,22.28 26,18 C26,13.72 23.01,10.14 19,9.23 L19,11.29 Z" id="ytp-id-14"></path><path class="ytp-svg-fill ytp-svg-volume-animation-hider" clip-path="url(#ytp-svg-volume-animation-slash-mask)" d="M 9.25,9 7.98,10.27 24.71,27 l 1.27,-1.27 Z" id="ytp-id-15" style="display: none;"></path></svg>';
@@ -30,10 +30,8 @@ function volumeOff (e) {
     }
 }
 
-function volumeUpdate (e) {
-    console.log(video.valume);
+function volumeUpdate (event) {
     video.volume = this.value;
-    console.log(video.valume);
 }
 
 function fullScreen(element) {
@@ -77,11 +75,11 @@ function chooseProgress (e) {
 }
 
 function skip (e) {
-  console.log(this.dataset.skip);
+
      video.currentTime += +this.dataset.skip;
 }
 
-video.addEventListener('click', playAndUpdateBtn);
+video.addEventListener('click', onPlayOrPause);
 video.addEventListener('timeupdate', handleProgress);
 video.addEventListener('dblclick', openFullScreen);
 
@@ -93,10 +91,10 @@ btnsRewind.forEach(btn => btn.addEventListener('click', skip));
 panel.onclick = function(e) {
     switch (e.target.closest('button').dataset.action) {
         case 'play':
-            playAndUpdateBtn ();
+            onPlayOrPause ();
             break;
         case 'turnOff':
-            volumeOff ();
+            toggleVolume ();
             break;
         case 'open':
             openFullScreen ();
