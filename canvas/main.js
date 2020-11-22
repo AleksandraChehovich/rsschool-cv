@@ -8,14 +8,12 @@ let colorBtn = 'white';
 let inProcess = false;
 let lastX = 0;
 let lastY = 0;
-console.log(canvas);
-console.log(colorBtn);
 
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = 5;
 
-function write (e) {
+function draw (e) {
 
     if (!inProcess) return;
 
@@ -28,8 +26,12 @@ function write (e) {
     lastY = e.layerY;
 }
 
+// function clear() {
+//     location.reload();
+// }
+
 function clear() {
-    location.reload();
+    ctx.clearRect(0, 0, 800, 600);
 }
 
 function startWriting(e) {
@@ -56,7 +58,7 @@ eraser.onclick = function (e) {
     colorBtn = 'black';
 }
 
-canvas.addEventListener('mousemove', write);
+canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', startWriting);
 canvas.addEventListener('mouseup', stopWriting);
 clearBtn.addEventListener('click', clear);
