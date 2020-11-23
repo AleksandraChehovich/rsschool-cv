@@ -44,22 +44,23 @@ function fullScreen(element) {
     }
   }
 
-//   function fullScreenCancel() {
-//     if(document.exitFullscreen) {
-//       document.exitFullscreen;
-//     } else if(document.webkitRequestFullscreen ) {
-//       document.webkitRequestFullscreen();
-//     } else if(document.mozRequestFullscreen) {
-//       document.mozRequestFullScreen();
-//     }
-//   }
+  function fullScreenCancel() {
+    if(document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if(document.webkitRequestFullscreen ) {
+      document.webkitRequestFullscreen();
+    } else if(document.mozRequestFullscreen) {
+      document.mozRequestFullScreen();
+    }
+  }
+
 function openFullScreen () {
     
     if (!fullScreenFlag) {
         fullScreen(wrapper);
         fullScreenFlag = true;
     } else {
-        document.exitFullscreen();
+        fullScreenCancel();
         fullScreenFlag = false;
     }
 }
