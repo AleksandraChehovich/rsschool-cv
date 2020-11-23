@@ -50,4 +50,5 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    pointer-events: none;
 }

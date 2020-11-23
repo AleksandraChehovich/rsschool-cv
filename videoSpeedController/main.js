@@ -24,16 +24,14 @@ function setSpeed(event) {
     video.playbackRate = playbackRate;
 }
 
-// function getCurrentSpeed(e) {
-//     const currentSpeed = video.playbackRate;
-//     const perc = (currentSpeed - min) / (max - min);
-//     const itemHeight = Math.round(perc * 100) + '%';
-//     controller.style.height = itemHeight;
-//     // console.log(currentSpeed);
-//     controller.innerHTML = currentSpeed.toFixed(1) + ' x';
-
-// }
+function getCurrentSpeed(e) {
+    const currentSpeed = video.playbackRate;
+    const perc = (currentSpeed - min) / (max - min);
+    const itemHeight = Math.round(perc * 100) + '%';
+    controller.style.height = itemHeight;
+    controller.innerHTML = currentSpeed.toFixed(1) + ' x';
+}
 
 speedControll.addEventListener('mousemove', onChooseSpeed);
 speedControll.addEventListener('mousedown', setSpeed);
-// speedControll.addEventListener('mouseout', getCurrentSpeed);
+speedControll.addEventListener('mouseout', getCurrentSpeed);
