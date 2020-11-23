@@ -6,6 +6,7 @@ const bestScore = document.querySelector('.best_score');
 let currScore = 0;
 let timeUp = false;
 let savedScore = 0;
+let lastSlapedDiver;
 let lastHole;
 
 randomNum = (min, max) => {
@@ -37,13 +38,17 @@ function emerge() {
 function startGame() {
     score.textContent = 0;
     timeUp = false;
+    this.disabled = true;
     if (savedScore < currScore) {
         savedScore = currScore;
         setBestScore();
     };
     currScore = 0;
     emerge();
-    setTimeout(() => timeUp = true, 17000)
+    setTimeout(() => {
+        timeUp = true;
+        this.disabled = false;
+    }, 17000);
     getBestScore();
 }
 
@@ -54,21 +59,26 @@ const getBestScore = () => {
 }
 
 const setBestScore = () => {
-    console.log(localStorage.getItem('bs'));
-    if (+localStorage.getItem('bs') < savedScore) {
-        
+
+    if (+localStorage.getItem('bs') < savedScore) {       
         localStorage.setItem('bs', savedScore);
     };
 }
 
-function slap(e) {
-    // if (!isTrusted) return;
-    currScore ++;
+function slap(event) {
+    if (!event.isTrusted) return;
+    if (lastSlapedDiver !== this.dataset.count) {
+        currScore ++;
+    }
+
+    lastSlapedDiver = this.dataset.count;
+ 
     this.parentNode.classList.remove('up');
     score.textContent = currScore;
 }
 
 startBtn.addEventListener('click', startGame);
 swimmers.forEach(swimmer => swimmer.addEventListener('click', slap));
+
 
 getBestScore();

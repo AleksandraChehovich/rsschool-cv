@@ -43,13 +43,14 @@ body {
 
 .hole_watter {
     position: absolute;
-    width: 95%;
-    height: 36px;
+    width: 96%;
+    height: 29px;
     background:linear-gradient(#7d7df4, #c8d1ff, #a6b4e8, #7c86f8, #7d7de5);
     bottom: 2px;
     z-index: 2;
     border-radius: 49%;
     animation: bg 20s infinite alternate;
+    box-shadow: 1px -1px 0 3px black;
 }
 
 @keyframes bg {
@@ -61,7 +62,7 @@ body {
 .hole_img {
     background: url(./img/Underwater.png);
     background-color: transparent;
-    width: 50%;
+    width: 70%;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -73,13 +74,13 @@ body {
 }
 
 .up .hole_img{
-    bottom: -1vw;
+    bottom: 1vw;
 }
 
 .hole_item {
     background: black;
     width: 97%;
-    height: 50px;
+    height: 35px;
 
     border: 2px solid black;
     border-radius: 59%;
@@ -91,8 +92,8 @@ body {
 .hole:after {
     content: '';
     display: block;
-    width: 99%;
-    height: 50px;
+    width: 75%;
+    height: 13px;
     border-bottom: 2px solid black;
     border-radius: 59%;
     position: absolute;
