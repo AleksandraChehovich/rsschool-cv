@@ -12,14 +12,14 @@ const fullScreenBtn = document.querySelector('.fullscreen');
 const backgroundMusic = new Audio();
 const operations = ['+', '-', '*', '/'];
 
-
+let enteredResult;
+let autoTimer;
 let wavesInitialHeight = 200;
 let looseCount = 0;
 let rangeOfNumbers = 10;
 let numberOfPoints = 10;
-let enteredResult;
 let correctAnswersCount = 0;
-let creatingNewDropsIntervalNumber = 5000;
+let creatingNewDropsIntervalNumber = 4000;
 let fallingIntervalNumber = 500;
 let resultsArray = [];
 let dropsArray = [];
@@ -44,38 +44,37 @@ let savedScore = 0;
 
 let randomNumber = (min, max) => {
     return Math.round(Math.random() * (max - min) + min);
-}
+};
 
 let randomOperation = (arr) => {
     return arr[Math.round(Math.random() * (arr.length - 1))];
-}
+};
 
 let getRandomBonusDropNumber = () => {
     allDropsCount % 4 === 0 ? randomBonusDropNumber = randomNumber(allDropsCount + 1, allDropsCount + 4) :
                                randomBonusDropNumber;
-}
+};
 
 let getRandomDoubleDropNumber = () => {
     allDropsCount % 8 === 0 ? randomDoubleDropNumber = randomNumber(allDropsCount + 1, allDropsCount + 8) :
                               randomDoubleDropNumber;
-}
-
+};
 
 let creatingNewDropsInterval = () => {
     if (correctAnswersCount < 3) {
         creatingNewDropsIntervalNumber;
         rangeOfNumbers;
     } if (correctAnswersCount > 3 && correctAnswersCount < 6) {
-        creatingNewDropsIntervalNumber = 4000;
+        creatingNewDropsIntervalNumber = 3000;
         rangeOfNumbers = 15;
     } else if (correctAnswersCount >= 6 && correctAnswersCount < 12) {
-        creatingNewDropsIntervalNumber = 3000;
+        creatingNewDropsIntervalNumber = 2500;
         rangeOfNumbers = 25;
      } else if (correctAnswersCount >= 12) {
         creatingNewDropsIntervalNumber = 2000;
         rangeOfNumbers = 40;
-     } 
-}
+     };
+};
 
 // function changeFallingDurationTime(num) {
 //     dropsArray.forEach(drop => drop.style.animationDuration = num + 's');
@@ -87,13 +86,13 @@ const setBestScore = () => {
     savedScore = score;
     if (+localStorage.getItem('bestScore') < savedScore) {
         localStorage.setItem('bestScore', savedScore);
-    }
-}
+    };
+};
 
 const getBestScore = () => {
     localStorage.getItem('bestScore') === null ? bestScoreTabble.textContent = 0 :
                                                  bestScoreTabble.textContent = localStorage.getItem('bestScore');
-}
+};
 
 function getResult(operand1, strOperator, operand2) {
     if (strOperator === '+') {
@@ -104,8 +103,8 @@ function getResult(operand1, strOperator, operand2) {
         return operand1 * operand2;
     } else if (strOperator === '/') {
         return operand1 / operand2;
-    }
-}
+    };
+};
 
 function createDrop() {
  
@@ -117,14 +116,14 @@ function createDrop() {
     if (strOperator === '-') {
         if (operand1 < operand2) {
             operand1 = randomNumber(operand2, rangeOfNumbers);
-        }
-    }
+        };
+    };
 
     if (strOperator === '/') {
         if (operand1 % operand2 !== 0) {
             operand1 = operand1 + (operand2 - operand1 % operand2);
-        }
-    } 
+        };
+    };
 
     let drop = document.createElement('div');
     drop.classList.add('drop');
@@ -136,7 +135,7 @@ function createDrop() {
     drop.getCurResult = {
         result: currentResult,
         operator: strOperator
-    }
+    };
 
     resultsArray.push(currentResult);
     dropsArray.push(drop);
@@ -147,34 +146,32 @@ function createDrop() {
 
     playingField.prepend(drop);
 
-    drop.addEventListener('animationend', missingDrop);
-    
-}
+    drop.addEventListener('animationend', missingDrop);   
+};
 
 function checkIfBonusDrop(d) {
     if (allDropsCount === randomBonusDropNumber) {
         d.classList.add('bonus');
-    }
-}
+    };
+};
 
 function checkIfDoubleDrop(d) {
     if (allDropsCount === randomDoubleDropNumber) {
         d.classList.add('double');
-    }
-}
-
+    };
+};
 
 function updateScore() {
     if (doubleDrop) {
         score = score * 2;
     } else {
         score += numberOfPoints;
-    }
+    };
     
     scorePanel.textContent = score;
     numberOfPoints++;
     doubleDrop = false;
-}
+};
 
 function getOperatorsStatistic(d) {
     if (d.getCurResult.operator === '+') {
@@ -185,10 +182,10 @@ function getOperatorsStatistic(d) {
         multiplicationCount++;
     } else if (d.getCurResult.operator === '/') {
         additionCount++;
-    }
-}
+    };
+};
 
-function compareResults () {
+function compareResults() {
     let index = resultsArray.indexOf(+enteredResult);
     if (index !== -1) {
         resultsArray.splice(index, 1);
@@ -211,14 +208,14 @@ function compareResults () {
                 dropsArray[index].remove();
                 dropsArray.splice(index, 1);
             }, 800);
-        }
+        };
 
         updateScore();
         correctAnswersCount++;
         playWinSound();
         creatingNewDropsInterval();
-    } 
-}
+    };
+};
 
 function missingDrop(d) {
     const waves = document.querySelector('.waves');
@@ -234,11 +231,12 @@ function missingDrop(d) {
         looseCount++;     
 
         stopGame();
-}
+};
 
 
 const onStartGame = () => {
     
+    playBackgroundMusic();
     updateCounts();
     scorePanel.textContent = score;    
 
@@ -248,7 +246,7 @@ const onStartGame = () => {
         createDrop();
         launcheDropTimer = setTimeout(droping, creatingNewDropsIntervalNumber);
     }, creatingNewDropsIntervalNumber);
-}
+};
 
 function stopGame() {
 
@@ -270,8 +268,8 @@ function stopGame() {
         
         numberOfPoints = 10;
         score = 0;
-    }
-}
+    };
+};
 
 function returnCoverPage() {
     const statistic = document.querySelector('.statistic_wrapper');
@@ -280,8 +278,11 @@ function returnCoverPage() {
     cover.style.display = 'flex';
     statistic.style.display = 'block';
     currentScoreContent.textContent = score;
-    automaticFlag = false;
-}
+    if(automaticFlag) {
+        clearTimeout(autoTimer);
+        automaticFlag = false;
+    }; 
+};
 
 function getCurrentResults() {
     const addition = document.querySelector('.addition_cur');
@@ -293,7 +294,7 @@ function getCurrentResults() {
     substraction.textContent = substractionCount;
     multiplication.textContent = multiplicationCount;
     division.textContent = divisionCount;
-}
+};
 
 function updateTotallResults() {
     const totallAdditionCountTabble = document.querySelector('.addition_all');
@@ -311,7 +312,7 @@ function updateTotallResults() {
         'totallSubstractionCount': substractionCount,
         'totallMultiplicationCount': multiplicationCount,
         'totallDivisionCount': divisionCount
-    }
+    };
 
     setTotallResults(resultObject);
 
@@ -319,7 +320,7 @@ function updateTotallResults() {
     totallSubstractionCountTabble.textContent = +localStorage.getItem(`totallSubstractionCount`);
     totallMultiplicationCountTabble.textContent = +localStorage.getItem(`totallMultiplicationCount`);
     totallDivisionCountTabble.textContent = +localStorage.getItem(`totallDivisionCount`);
-}
+};
 
 function setTotallResults(obj) {
     for (let key in obj) {
@@ -328,9 +329,9 @@ function setTotallResults(obj) {
         } else {
             let totallRes = +localStorage.getItem(key) + obj[key];
             localStorage.setItem(key, totallRes);
-        }    
-    }
-}
+        };    
+    };
+};
 
 function updateCounts() {
     additionCount = 0;
@@ -338,7 +339,7 @@ function updateCounts() {
     multiplicationCount = 0;
     divisionCount = 0;
     looseCount = 0;
-}
+};
 
 function removeResultsFromArrays(res) {
     let index = resultsArray.indexOf(res);
@@ -346,16 +347,16 @@ function removeResultsFromArrays(res) {
     if (index !== -1) {
         resultsArray.splice(index, 1);
         dropsArray.splice(index, 1);
-    }
-}
+    };
+};
 
 function enterNumber(btn) {
     if (!btn) return null;
     if (display.value === '0') {
         display.value = '';
-    }
+    };
     display.value += btn.dataset.value;
-}
+};
 
 function enterOperation(btn) {
     if (btn.dataset.operation === 'Enter') {
@@ -364,44 +365,44 @@ function enterOperation(btn) {
         deleteNum(btn);
     } else if (btn.dataset.operation === 'Backspace') {
         clearDisplay();
-    }
-}
+    };
+};
 
 function enterResult(btn) {
         enteredResult = display.value;
         clearDisplay();
         compareResults();
-}
+};
 
 function autoEnterResult() {
     enteredResult = display.value;
     setTimeout(clearDisplay(), 1500);
     compareResults();
-}
+};
 
 function deleteNum(btn) {
     display.value = display.value.slice(0, display.value.length - 1);
-}
+};
 
 function clearDisplay() {
     display.value = '';
-}
+};
 
 const onKeyboardPressNum = (event) => {
     const btn = document.querySelector(`button[data-value='${event.key}']`);
 
     if (btn) {
         enterNumber(btn);
-    }   
-}
+    };  
+};
 
 const onKeyboardPressOp = (event) => {
     const btn = document.querySelector(`button[data-operation='${event.key}']`);
 
     if(btn) {
         enterOperation(btn);
-    }   
-}
+    };  
+};
 
 function returnToInitialValues() {
     const waves = document.querySelector('.waves');
@@ -414,24 +415,24 @@ function returnToInitialValues() {
     correctAnswersCount = 0;
     rangeOfNumbers = 10;
     allDropsCount = 0;
-}
+};
 
 function playWinSound() {
     let winSound = new Audio();
     winSound.src = './sounds/win.mp3';
     winSound.play();
-}
+};
 
 function playLooseSound() {
     let looseSound = new Audio();
     looseSound.src = './sounds/loose.mp3';
     looseSound.play();
-}
+};
 
 const playBackgroundMusic = () => {
     backgroundMusic.src = './sounds/zvuki_zhivoj_prirodi_-_more_i_chajki_(zf.fm).mp3';
     backgroundMusic.play();
-}
+};
 
 function onSwitchSound() {
     if (backgroundMusic.paused) {
@@ -440,8 +441,8 @@ function onSwitchSound() {
     } else {
         backgroundMusic.pause();
         this.src = './svg/mute1.svg';
-    }
-}
+    };
+};
 
 function fullScreen(element) {
     if(element.requestFullscreen) {
@@ -450,8 +451,8 @@ function fullScreen(element) {
       element.webkitRequestFullscreen();
     } else if(element.mozRequestFullscreen) {
       element.mozRequestFullScreen();
-    }
-}
+    };
+};
 
 function cancelfullScreen() {
     if(document.exitFullscreen) {
@@ -460,8 +461,8 @@ function cancelfullScreen() {
     document.webkitRequestFullscreen();
     } else if(document.mozRequestFullscreen) {
     document.mozRequestFullScreen();
-    }
-}
+    };
+};
 
 function onOpenFullScreen() {
     const  wrapper = document.querySelector('.wrapper');
@@ -477,39 +478,33 @@ function onOpenFullScreen() {
         this.src = './svg/fullscreen1.svg';
         largeBtns.forEach(btn => btn.style.width = '100%');
         fullScreenFlag = false;
-    }
-}
+    };
+};
 
 const onChangeCloudPosition = () => {
     cloud.style.top = `${randomNumber(0, 50)}%`;
     cloud.style.width = `${randomNumber(15, 45)}%`;
-}
+};
 
 numberField.onclick = function(event) {
     event.target.getAttribute('data-value') ? enterNumber(event.target) : 
                                               enterOperation(event.target);
-}
+};
 
 function onPlayAutomatic() {
 
     automaticFlag = true;
     onStartGame();
 
-    let resultValue;
-
-    let autoTimer = setTimeout(function auto() {
-        resultValue = resultsArray[randomNumber(0, resultsArray.length - 1)];
-        if (!resultValue) {
-            clearTimeout(autoTimer);
-        } else {
+    autoTimer = setTimeout(function auto() {
+        let resultValue = resultsArray[randomNumber(0, resultsArray.length - 1)];
+   
             display.value = resultValue;
             let autoTimerRes = setTimeout(autoEnterResult, 1000);
 
-            autoTimer = setTimeout(auto, 4000);
-        }
+            autoTimer = setTimeout(auto, 6000);
     }, 4000);
-
-}
+};
 
 mute.addEventListener('click', onSwitchSound);
 fullScreenBtn.addEventListener('click', onOpenFullScreen);
@@ -522,8 +517,6 @@ howToPlayBtn.addEventListener('click', onPlayAutomatic);
 
 for (let i = 0; i < dropsArray.length; i++) {
     dropsArray[i].addEventListener('animationstart', missingDrop);
-}
+};
 
 cloud.addEventListener('animationiteration', onChangeCloudPosition);
-
-playBackgroundMusic();
