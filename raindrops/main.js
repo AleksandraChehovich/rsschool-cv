@@ -73,7 +73,7 @@ let creatingNewDropsInterval = () => {
      } else if (correctAnswersCount >= 12) {
         creatingNewDropsIntervalNumber = 2000;
         rangeOfNumbers = 40;
-     };
+     }
 };
 
 // function changeFallingDurationTime(num) {
@@ -86,7 +86,7 @@ const setBestScore = () => {
     savedScore = score;
     if (+localStorage.getItem('bestScore') < savedScore) {
         localStorage.setItem('bestScore', savedScore);
-    };
+    }
 };
 
 const getBestScore = () => {
@@ -103,7 +103,7 @@ function getResult(operand1, strOperator, operand2) {
         return operand1 * operand2;
     } else if (strOperator === '/') {
         return operand1 / operand2;
-    };
+    }
 };
 
 function createDrop() {
@@ -116,14 +116,14 @@ function createDrop() {
     if (strOperator === '-') {
         if (operand1 < operand2) {
             operand1 = randomNumber(operand2, rangeOfNumbers);
-        };
-    };
+        }
+    }
 
     if (strOperator === '/') {
         if (operand1 % operand2 !== 0) {
             operand1 = operand1 + (operand2 - operand1 % operand2);
-        };
-    };
+        }
+    }
 
     let drop = document.createElement('div');
     drop.classList.add('drop');
@@ -152,13 +152,13 @@ function createDrop() {
 function checkIfBonusDrop(d) {
     if (allDropsCount === randomBonusDropNumber) {
         d.classList.add('bonus');
-    };
+    }
 };
 
 function checkIfDoubleDrop(d) {
     if (allDropsCount === randomDoubleDropNumber) {
         d.classList.add('double');
-    };
+    }
 };
 
 function updateScore() {
@@ -182,7 +182,7 @@ function getOperatorsStatistic(d) {
         multiplicationCount++;
     } else if (d.getCurResult.operator === '/') {
         additionCount++;
-    };
+    }
 };
 
 function compareResults() {
@@ -208,13 +208,13 @@ function compareResults() {
                 dropsArray[index].remove();
                 dropsArray.splice(index, 1);
             }, 800);
-        };
+        }
 
         updateScore();
         correctAnswersCount++;
         playWinSound();
         creatingNewDropsInterval();
-    };
+    }
 };
 
 function missingDrop(d) {
@@ -268,7 +268,7 @@ function stopGame() {
         
         numberOfPoints = 10;
         score = 0;
-    };
+    }
 };
 
 function returnCoverPage() {
@@ -281,7 +281,7 @@ function returnCoverPage() {
     if(automaticFlag) {
         clearTimeout(autoTimer);
         automaticFlag = false;
-    }; 
+    } 
 };
 
 function getCurrentResults() {
@@ -329,7 +329,7 @@ function setTotallResults(obj) {
         } else {
             let totallRes = +localStorage.getItem(key) + obj[key];
             localStorage.setItem(key, totallRes);
-        };    
+        }   
     };
 };
 
@@ -347,7 +347,7 @@ function removeResultsFromArrays(res) {
     if (index !== -1) {
         resultsArray.splice(index, 1);
         dropsArray.splice(index, 1);
-    };
+    }
 };
 
 function enterNumber(btn) {
@@ -365,7 +365,7 @@ function enterOperation(btn) {
         deleteNum(btn);
     } else if (btn.dataset.operation === 'Backspace') {
         clearDisplay();
-    };
+    }
 };
 
 function enterResult(btn) {
@@ -393,7 +393,7 @@ const onKeyboardPressNum = (event) => {
 
     if (btn) {
         enterNumber(btn);
-    };  
+    } 
 };
 
 const onKeyboardPressOp = (event) => {
@@ -401,7 +401,7 @@ const onKeyboardPressOp = (event) => {
 
     if(btn) {
         enterOperation(btn);
-    };  
+    }
 };
 
 function returnToInitialValues() {
@@ -441,7 +441,7 @@ function onSwitchSound() {
     } else {
         backgroundMusic.pause();
         this.src = './svg/mute1.svg';
-    };
+    }
 };
 
 function fullScreen(element) {
@@ -451,7 +451,7 @@ function fullScreen(element) {
       element.webkitRequestFullscreen();
     } else if(element.mozRequestFullscreen) {
       element.mozRequestFullScreen();
-    };
+    }
 };
 
 function cancelfullScreen() {
@@ -461,7 +461,7 @@ function cancelfullScreen() {
     document.webkitRequestFullscreen();
     } else if(document.mozRequestFullscreen) {
     document.mozRequestFullScreen();
-    };
+    }
 };
 
 function onOpenFullScreen() {
@@ -478,7 +478,7 @@ function onOpenFullScreen() {
         this.src = './svg/fullscreen1.svg';
         largeBtns.forEach(btn => btn.style.width = '100%');
         fullScreenFlag = false;
-    };
+    }
 };
 
 const onChangeCloudPosition = () => {
