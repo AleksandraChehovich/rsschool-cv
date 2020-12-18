@@ -1,0 +1,27 @@
+.error {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index: 5;
+    display: none;
+
+    &_window {
+        width: 200px;
+        height: 65px;
+        background:#ffe9ece8;
+        border-radius: 3px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &_text {
+        color: #3d3d3d;
+        font-size: 17px;
+    } 
+}
+
+.active {
+    display: block;
+}

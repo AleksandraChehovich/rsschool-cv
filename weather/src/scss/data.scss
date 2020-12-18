@@ -1,0 +1,200 @@
+@import "./mixin.scss";
+
+.data {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: $text-size;
+
+    &_item {
+        flex: 1;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        &__current {
+            flex: 2;
+            position: relative;
+        }
+
+        &__location {
+            align-items: center;
+            font-style: italic;
+        }
+    }
+
+    &_next-day {
+        margin-bottom: 30px;
+    }
+
+    &_location {
+        font-size: $text-size*2.2;
+    }
+
+    &_date {
+        font-size: $text-size*1.6;
+    }
+
+    &_temperature {
+        display: flex;
+        align-items: center;
+    }
+
+    &_temperature-icon {
+        display: flex;
+        flex-direction: column;
+        font-size: $text-size*0.7;
+
+        &__img {
+            width: vw(300);
+        }
+    }
+
+    &_details {
+        font-size: $text-size*0.5;
+        align-self: flex-end;
+        font-style: italic;
+    }
+}
+
+.time {
+    font-family: 'Arimo';
+}
+
+.feels {
+    display: flex;
+}
+
+.text {
+    margin-right: 10px;
+}
+
+.wind {
+    &_value {
+        text-transform: lowercase;
+    }
+}
+
+.next-day {
+    position: relative;
+    width: 100%;
+
+    &_text {
+        font-size: $text-size*0.7;
+    }
+
+    &_temperature {
+    display: flex;
+    }
+
+    &_temperature-icon {
+        width: 110px;
+    }
+}
+
+@include scale (1115, 'less') {
+    .data {
+        &_location {
+            font-size: $text-size*1.5;
+        }
+
+        &_date {
+            font-size: $text-size;
+        }
+    }
+
+    .next-day {
+        &_text {
+            font-size: $text-size*0.7;
+        }
+    }
+}
+
+@include scale (880, 'less') {
+    .data{
+        flex-direction: column;
+
+        &_item {
+
+            &__futured {
+                flex-direction: row;
+            }
+
+            &__location {
+                flex-direction: row;
+            }
+        }
+
+        &_next-day {
+            margin: 20px;
+            font-size: $text-size;
+            flex: 1;
+        }
+
+        &_temperature-icon {
+            &__img {
+                width: vw(150);
+            }
+        }
+    }
+}
+
+@include scale (660, 'less') {
+
+        .next-day {
+            &_text {
+                font-size: vw(50);
+            }
+
+            &_temperature-icon {
+                width: 80px;
+            }
+        }
+}
+
+@include scale (500, 'less') {
+
+    .next-day {
+        &_temperature {
+        font-size: vw(60);
+        flex-direction: column;
+        }
+
+        &_temperature-icon {
+            width: 60px;
+        }
+
+        &_text {
+            font-size: vw(40);
+        }
+    }
+
+    .data {
+        &_temperature-icon {
+            &__context {
+                font-size: $text-size*0.5;
+            }
+
+            &__img {
+                width: 50%;
+            }
+        }
+
+        &_details {
+            font-size: $text-size*0.3;
+        }
+
+        &_date {
+            font-size: $text-size*0.7;
+        }
+
+        &_time {
+            font-size: $text-size*0.5;
+        }
+
+        &_location {
+            font-size: $text-size;
+        }
+    }
+}

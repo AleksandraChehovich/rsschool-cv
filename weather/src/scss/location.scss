@@ -1,0 +1,76 @@
+@import "./mixin.scss";
+
+.location-map {
+    $location-map: &;
+
+    position: relative;
+
+    &_map {
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        margin-bottom: 30px;
+        transition: all 1.5s;
+
+        &:hover {
+            transform: scale(1.5) translateY(-39px);
+        }
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 39px;
+        border: 12px solid transparent; 
+        border-top: 15px solid #efe9e1;
+    }
+
+    &_latitude,
+    &_longitude {
+        font-size: $text-size*0.5;
+        margin-right: 4px;
+    }
+}
+
+.latitude_ctx,
+.longitude_ctx {
+        font-size: $text-size*0.5;
+        margin-right: 6px;
+    }
+
+sup {
+    font-size: $text-size*0.2;
+    margin-left: 3px;
+}
+
+@include scale (880, 'less') {
+    .location-map {
+
+        &_map {
+            width: 250px;
+            height: 150px;
+            border-radius: 0;
+            margin-right: 15px;
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+}
+
+@include scale (450, 'less') {
+    .location-map {
+
+        &_map {
+            width: 280px;
+            height: 120px;
+            margin: 0;
+        }
+
+        &_latitude,
+        &_longitude {
+            display: none;
+        }
+    }
+}

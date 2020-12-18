@@ -1,0 +1,26 @@
+@import "./mixin.scss";
+
+.controlls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &_item {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &_background {
+        width: 30px;
+    }
+}
+
+@include scale (460, 'less') {
+
+    .controlls {
+        flex-direction: column;
+        justify-content: center;
+    }
+}

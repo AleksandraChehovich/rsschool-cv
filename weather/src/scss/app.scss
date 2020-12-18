@@ -1,0 +1,15 @@
+.app {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &_controlls {
+        flex: 1;
+    }
+
+    &_data {
+        flex: 6;
+    }
+}
