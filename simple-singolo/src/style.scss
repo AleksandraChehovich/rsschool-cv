@@ -164,21 +164,22 @@ body {
     border-bottom: 6px solid #EA676B;
     text-align: center;
     margin-top: 93px;
+    overflow: hidden;
     
 
     &_wrapper {
         padding: 0;
+        display: flex;
+        transition: all .6s ease;
+        margin: 0 auto;
     }
 
     &_img {
         object-fit: cover;
         max-width: 100%;
         max-height: 577px;
-        
-        &__hor {
-            display:none;
-        }
     }
+    
     &_arrow {
         display: flex;
         align-items: center;
@@ -197,6 +198,20 @@ body {
         }
     }
 }
+
+.container_img {
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    &__orange {
+        background-color:  #F06C64;
+    }
+
+    &__blue {
+        background-color:  #648bf0;
+    }
+}
+
 .head {
     font-size: 30px;
     color: $header_color;

@@ -15,11 +15,6 @@ let   indexForSlider = 0;
 let   slider = document.getElementById("slider");
 let   blockList = document.querySelectorAll("[data-anchor]");
 
-//       Switching selector arrows
-
- slideRight.addEventListener('click', moveLeft);
- slideLeft.addEventListener('click', moveRight);
-
 //        Filter Portfolio Items
 
 for (let i = 0; i < totalFilter.length; i++) {
@@ -84,37 +79,108 @@ window.addEventListener('scroll', (event) => {
 }
 )
 
-function moveLeft (event) {
-    event.preventDefault();
 
-    let slider = document.getElementById("slider"); 
+const multiItemsSlider = (function() {
+    return function(selector, config) {
+        let currentElement = document.querySelector(selector);
+        const sliderWrapper = currentElement.querySelector('.slider_wrapper');
+        const sliderItems = currentElement.querySelectorAll('.container_img');
+        const sliderControls = currentElement.querySelectorAll('.slider_arrow');
+        const sliderControlLeft = currentElement.querySelector('.slider_arrow__left');
+        const sliderControlRight = currentElement.querySelector('.slider_arrow__right');
+        let wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width);
+        let itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width);
+        let positionLeftItem = 0;
+        let transform = 0;
+        let step = itemWidth / wrapperWidth * 100;
+        let items = [];
 
-    if (indexForSlider >= 1) {
-        totalImg[indexForSlider].style.display = "none";
-        totalImg[--indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = " #F06C64";
-    } else   if  (indexForSlider === 0) {
-        totalImg[indexForSlider].style.display = "none";
-        totalImg[++indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = "#648BF0";
-        }  
-}
+        sliderItems.forEach(function(item, index) {
+            items.push({ item: item, position: index, transform: 0});
+        });
 
-function moveRight (event) {
-    event.preventDefault();
+        let position = {
+            getItemMin: function() {
+                let indexItem = 0;
+                items.forEach(function(item, index) {
+                    if (item.position < items[indexItem].position) {
+                        indexItem = index;
+                    }
+                });
+                return indexItem;
+            }, 
+            getItemMax: function() {
+                let indexItem = 0;
+                items.forEach(function(item, index) {
+                    if (item.position > items[indexItem].position) {
+                        indexItem = index;
+                    }
+                });
+                return indexItem;
+            },
+            getMin: function() {
+                return items[position.getItemMin()].position;
+            },
+            getMax: function() {
+                return items[position.getItemMax()].position;
+            }
+        }
 
-    let slider = document.getElementById("slider");
+        let transformItem = function(direction) {
+            let nextItem;
+            if (direction === 'right') {
+                positionLeftItem++;
+                if((positionLeftItem + wrapperWidth / itemWidth -1) > position.getMax()) {
 
-    if (indexForSlider >= 1) {
-        totalImg[indexForSlider].style.display = "none";
-        totalImg[--indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = " #F06C64";
-    } else   if  (indexForSlider === 0) {
-        totalImg[indexForSlider].style.display = "none";
-        totalImg[++indexForSlider].style.display = "inline";
-        slider.style.backgroundColor = "#648BF0";
-        }  
-}
+                    nextItem = position.getItemMin();
+                    items[nextItem].position = position.getMax() + 1;
+                    items[nextItem].transform +=  items.length * 100;
+                    items[nextItem].item.style.transform = `translateX(${items[nextItem].transform}%)`;
+                }
+                transform -= step;
+            }
+            if (direction ==='left') {
+                positionLeftItem--;
+                if (positionLeftItem < position.getMin()) {
+                    nextItem = position.getItemMax();
+                    items[nextItem].position = position.getMin() - 1;
+                    items[nextItem].transform -= items.length * 100;
+                    items[nextItem].item.style.transform = `translateX(${items[nextItem].transform}%)`;
+                }
+                transform += step;
+            }
+            sliderWrapper.style.transform = `translateX(${transform}%)`;
+        }
+
+        let controlClick = function(e) {
+            if (e.target.classList.contains('slider_arrow')) {
+                e.preventDefault();
+                let direction = e.target.classList.contains('slider_arrow__right') ? 'right' : 'left';
+                transformItem(direction);
+            }
+        };
+
+        let setUpListener = function() {
+            sliderControls.forEach(item => {
+                item.addEventListener('click', controlClick);
+            });
+        }
+
+        setUpListener();
+
+        return {
+            right: function() {
+                transformItem('right');
+            },
+            left: function() {
+                transformItem('left');
+            }
+        }
+    }
+    }());
+
+let slidImg = multiItemsSlider('.slider');
+
 
 function showActiveFilter (event) {
     event.preventDefault();
@@ -164,4 +230,3 @@ function filterPortfolioImages (event) {
         }
     }
 } 
-
