@@ -27,7 +27,7 @@ function onEnterCityName() {
             cityName = transliterate(cityName);
         }
     }
-    getCurrentValues();
+    setCurrentValues();
     searchInput.value = '';
 };
 
@@ -69,7 +69,7 @@ function changeToEn() {
     lng.textContent = 'Longitude:';
 };
 
-export function getCurrentValues() {
+export function setCurrentValues() {
     const currentDayTemperature = document.querySelector('.current');
     const firstDayTemperature = document.querySelector('.first');
     const secondDayTemperature = document.querySelector('.second');
@@ -112,8 +112,11 @@ function getSearchingLocation(lat, lon) {
     const latitude = document.querySelector('.latitude');
     const longitude = document.querySelector('.longitude');
 
-    latitude.innerHTML = `${lat.slice(0, lat.indexOf('.'))}<sup>o</sup>${lat.slice(lat.indexOf('.') + 1, lat.indexOf('.') + 3)}'`;
-    longitude.innerHTML = `${lon.slice(0, lon.indexOf('.'))}<sup>o</sup>${lon.slice(lon.indexOf('.') + 1, lon.indexOf('.') + 3)}'`;
+    // latitude.innerHTML = `${lat.slice(0, lat.indexOf('.'))}<sup>o</sup>${lat.slice(lat.indexOf('.') + 1, lat.indexOf('.') + 3)}'`;
+    // longitude.innerHTML = `${lon.slice(0, lon.indexOf('.'))}<sup>o</sup>${lon.slice(lon.indexOf('.') + 1, lon.indexOf('.') + 3)}'`;
+
+    latitude.innerHTML = getCoordinate(lat);
+    longitude.innerHTML = getCoordinate(lon);
 
     mapboxgl.accessToken = 'pk.eyJ1Ijoic2FudW5pYSIsImEiOiJja2lrNTN6cnEwNmpxMnFwa251NnZsbGMxIn0.bi_bHohbNm1r-c9tAIISMg';
 
@@ -124,6 +127,10 @@ function getSearchingLocation(lat, lon) {
         style: 'mapbox://styles/mapbox/streets-v11'
     });
 };
+
+function getCoordinate(direction) {
+    return `${direction.slice(0, direction.indexOf('.'))}<sup>o</sup>${direction.slice(direction.indexOf('.') + 1, direction.indexOf('.') + 3)}'`;
+}
 
 export function getDefaultTempMeasure() {
     const buttons = document.querySelectorAll('.controlls_degrees-item');
@@ -177,7 +184,7 @@ function getCityNameByLocation(lat, lon) {
         getDefaultTempMeasure();
         getDefaultLanguage();
 
-        getCurrentValues(cityName);
+        setCurrentValues(cityName);
     });
 };
 
@@ -207,7 +214,7 @@ switchTempButtons.onclick = function(event) {
         measures = 'I';
     }
     localStorage.setItem('temperatureMeasurement', isCels);
-    getCurrentValues();
+    setCurrentValues();
 };
 
 switchLangButtons.onclick = function(event) {
@@ -225,7 +232,7 @@ switchLangButtons.onclick = function(event) {
         isRuLanguage = 0;
     }
     localStorage.setItem('language', isRuLanguage);
-    getCurrentValues();
+    setCurrentValues();
     getCurrentDate();
 };
 

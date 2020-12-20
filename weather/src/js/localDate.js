@@ -1,8 +1,8 @@
 const WeekDaysRu = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 const WeekDaysEn = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-let c;
-let t;
+let currentCountryCode;
+let currentTimezone;
 
 export function getCurrentDate(code) {
     const weekday = document.querySelector('.date_weekday');
@@ -31,39 +31,39 @@ function getCurrentLanguage() {
    return +localStorage.getItem('language') ? 'ru-RU' : 'en-En';
 }
 
-function getNextDay(d) {
+function getNextDay(dayNumber) {
     const futureDays = document.querySelectorAll('.next-day_text');
     let daysArray;
 
-    +localStorage.getItem('language') ? daysArray = WeekDaysRu : daysArray = WeekDaysEn;
+    daysArray = +localStorage.getItem('language') ? WeekDaysRu : WeekDaysEn;
 
     for (let i = 0; i < futureDays.length; i++) {
-        d++;
-        if (d === 7) {
-            d = 0;
+        dayNumber++;
+        if (dayNumber === 7) {
+            dayNumber = 0;
         }
         
-        futureDays[i].textContent = daysArray[d];
+        futureDays[i].textContent = daysArray[dayNumber];
     };
 };
 
 export function getCurrentTime(country_code, timezone) {
     const time = document.querySelector('.time');
-    c = country_code || c;
-    t = timezone || t;
+    currentCountryCode = country_code || currentCountryCode;
+    currentTimezone = timezone || currentTimezone;
 
     let optionsForTime = {
         hour: 'numeric',
         minute: 'numeric',
         second: 'numeric',
-        timeZone: t
+        timeZone: currentTimezone
     };
 
     let now = new Date();
 
-    time.textContent = now.toLocaleString(c, optionsForTime);
+    time.textContent = now.toLocaleString(currentCountryCode, optionsForTime);
 
-    setTimeout((c, t) => {
+    setTimeout((currentCountryCode, currentTimezone) => {
         getCurrentTime();
-    }, 1000, c, t);
+    }, 1000, currentCountryCode, currentTimezone);
 };
