@@ -61,10 +61,8 @@ let getRandomDoubleDropNumber = () => {
 };
 
 let creatingNewDropsInterval = () => {
-    if (correctAnswersCount < 3) {
-        creatingNewDropsIntervalNumber;
-        rangeOfNumbers;
-    } if (correctAnswersCount > 3 && correctAnswersCount < 6) {
+ 
+    if (correctAnswersCount > 3 && correctAnswersCount < 6) {
         creatingNewDropsIntervalNumber = 3000;
         rangeOfNumbers = 15;
     } else if (correctAnswersCount >= 6 && correctAnswersCount < 12) {
@@ -75,12 +73,6 @@ let creatingNewDropsInterval = () => {
         rangeOfNumbers = 40;
      }
 };
-
-// function changeFallingDurationTime(num) {
-//     dropsArray.forEach(drop => drop.style.animationDuration = num + 's');
-// }
-
-// setTimeout(changeFallingDurationTime(2), 5000);
 
 const setBestScore = () => {
     savedScore = score;
@@ -113,16 +105,12 @@ function createDrop() {
     let operand2 = randomNumber(1, rangeOfNumbers);
     allDropsCount++;
 
-    if (strOperator === '-') {
-        if (operand1 < operand2) {
-            operand1 = randomNumber(operand2, rangeOfNumbers);
-        }
+    if (strOperator === '-' && operand1 < operand2) {
+        operand1 = randomNumber(operand2, rangeOfNumbers);
     }
 
-    if (strOperator === '/') {
-        if (operand1 % operand2 !== 0) {
-            operand1 = operand1 + (operand2 - operand1 % operand2);
-        }
+    if (strOperator === '/' && operand1 % operand2 !== 0) {
+        operand1 = operand1 + (operand2 - operand1 % operand2);
     }
 
     let drop = document.createElement('div');
@@ -141,74 +129,60 @@ function createDrop() {
     dropsArray.push(drop);
     getRandomBonusDropNumber();
     getRandomDoubleDropNumber();
-    checkIfBonusDrop(drop);
-    checkIfDoubleDrop(drop);
+    setBonusDrop(drop);
+    setDoubleScoreDrop(drop);
 
     playingField.prepend(drop);
 
-    drop.addEventListener('animationend', missingDrop);   
+    drop.addEventListener('animationend', missDrop);   
 };
 
-function checkIfBonusDrop(d) {
+function setBonusDrop(drop) {
     if (allDropsCount === randomBonusDropNumber) {
-        d.classList.add('bonus');
+        drop.classList.add('bonus');
     }
 };
 
-function checkIfDoubleDrop(d) {
+function setDoubleScoreDrop(drop) {
     if (allDropsCount === randomDoubleDropNumber) {
-        d.classList.add('double');
+        drop.classList.add('double');
     }
 };
 
 function updateScore() {
     if (doubleDrop) {
         score = score * 2;
+        doubleDrop = false;
     } else {
         score += numberOfPoints;
     };
     
     scorePanel.textContent = score;
     numberOfPoints++;
-    doubleDrop = false;
 };
 
-function getOperatorsStatistic(d) {
-    if (d.getCurResult.operator === '+') {
+function countOperatorsStatistic(drop) {
+    if (drop.getCurResult.operator === '+') {
         additionCount++;
-    } else if (d.getCurResult.operator === '-') {
+    } else if (drop.getCurResult.operator === '-') {
         substractionCount++;
-    } else if (d.getCurResult.operator === '*') {
+    } else if (drop.getCurResult.operator === '*') {
         multiplicationCount++;
-    } else if (d.getCurResult.operator === '/') {
-        additionCount++;
+    } else if (drop.getCurResult.operator === '/') {
+        divisionCount++;
     }
 };
 
-function compareResults() {
+function makeCorrectResult() {
     let index = resultsArray.indexOf(+enteredResult);
     if (index !== -1) {
         resultsArray.splice(index, 1);
 
-        getOperatorsStatistic(dropsArray[index]);
+        countOperatorsStatistic(dropsArray[index]);
 
         dropsArray[index].classList.add('delete');
 
-        if (dropsArray[index].classList.contains('bonus')) {
-            setTimeout(function() {
-                dropsArray.forEach(drop => drop.remove());
-                dropsArray.splice(0, dropsArray.length);
-                resultsArray.splice(0, resultsArray.length);
-            }, 800);
-        } else {
-            if (dropsArray[index].classList.contains('double')) {
-                doubleDrop = true;
-            }
-            setTimeout(function() {
-                dropsArray[index].remove();
-                dropsArray.splice(index, 1);
-            }, 800);
-        }
+        checkDropForBonus(index);
 
         updateScore();
         correctAnswersCount++;
@@ -217,20 +191,37 @@ function compareResults() {
     }
 };
 
-function missingDrop(d) {
+function checkDropForBonus(index) {
+    if (dropsArray[index].classList.contains('bonus')) {
+        setTimeout(function() {
+            dropsArray.forEach(drop => drop.remove());
+            dropsArray.splice(0, dropsArray.length);
+            resultsArray.splice(0, resultsArray.length);
+        }, 800);
+    } else {
+        if (dropsArray[index].classList.contains('double')) {
+            doubleDrop = true;
+        }
+        setTimeout(function() {
+            dropsArray[index].remove();
+            dropsArray.splice(index, 1);
+        }, 800);
+    }
+};
+
+function missDrop(drop) {
     const waves = document.querySelector('.waves');
     let res = this.getCurResult.result;
 
-        playLooseSound();
-        this.remove();
+    playLooseSound();
+    this.remove();
+    removeResultsFromArrays(res);
+    this.removeEventListener('animationend', missDrop);
 
-        removeResultsFromArrays(res);
+    waves.style.height = (waves.clientHeight + 50) + 'px';
+    looseCount++;     
 
-        this.removeEventListener('animationend', missingDrop);
-        waves.style.height = (waves.clientHeight + 50) + 'px';
-        looseCount++;     
-
-        stopGame();
+    stopGame();
 };
 
 
@@ -341,8 +332,8 @@ function updateCounts() {
     looseCount = 0;
 };
 
-function removeResultsFromArrays(res) {
-    let index = resultsArray.indexOf(res);
+function removeResultsFromArrays(result) {
+    let index = resultsArray.indexOf(result);
 
     if (index !== -1) {
         resultsArray.splice(index, 1);
@@ -350,37 +341,37 @@ function removeResultsFromArrays(res) {
     }
 };
 
-function enterNumber(btn) {
-    if (!btn) return null;
+function enterNumber(button) {
+    if (!button) return null;
     if (display.value === '0') {
         display.value = '';
-    };
-    display.value += btn.dataset.value;
+    }
+    display.value += button.dataset.value;
 };
 
-function enterOperation(btn) {
-    if (btn.dataset.operation === 'Enter') {
-        enterResult(btn);
-    } else if (btn.dataset.operation === 'Delete') {
-        deleteNum(btn);
-    } else if (btn.dataset.operation === 'Backspace') {
+function enterOperation(button) {
+    if (button.dataset.operation === 'Enter') {
+        enterResult();
+    } else if (button.dataset.operation === 'Delete') {
+        deleteNum();
+    } else if (button.dataset.operation === 'Backspace') {
         clearDisplay();
     }
 };
 
-function enterResult(btn) {
+function enterResult() {
         enteredResult = display.value;
         clearDisplay();
-        compareResults();
+        makeCorrectResult();
 };
 
 function autoEnterResult() {
     enteredResult = display.value;
     setTimeout(clearDisplay(), 1500);
-    compareResults();
+    makeCorrectResult();
 };
 
-function deleteNum(btn) {
+function deleteNum() {
     display.value = display.value.slice(0, display.value.length - 1);
 };
 
@@ -389,18 +380,18 @@ function clearDisplay() {
 };
 
 const onKeyboardPressNum = (event) => {
-    const btn = document.querySelector(`button[data-value='${event.key}']`);
+    const button = document.querySelector(`button[data-value='${event.key}']`);
 
-    if (btn) {
-        enterNumber(btn);
+    if (button) {
+        enterNumber(button);
     } 
 };
 
 const onKeyboardPressOp = (event) => {
-    const btn = document.querySelector(`button[data-operation='${event.key}']`);
+    const button = document.querySelector(`button[data-operation='${event.key}']`);
 
-    if(btn) {
-        enterOperation(btn);
+    if(button) {
+        enterOperation(button);
     }
 };
 
@@ -516,7 +507,7 @@ startBtn.addEventListener('click', onStartGame);
 howToPlayBtn.addEventListener('click', onPlayAutomatic);
 
 for (let i = 0; i < dropsArray.length; i++) {
-    dropsArray[i].addEventListener('animationstart', missingDrop);
+    dropsArray[i].addEventListener('animationstart', missDrop);
 };
 
 cloud.addEventListener('animationiteration', onChangeCloudPosition);
