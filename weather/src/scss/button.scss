@@ -13,12 +13,6 @@ button {
     &:active {
         background: $buttons-collor-active;
     }
-
-    &:hover {
-        & img {
-            animation: rotate .3s ease 1;
-        }
-    }
 }
 
 button img {

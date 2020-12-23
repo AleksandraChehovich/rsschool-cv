@@ -1,17 +1,14 @@
-export let transliterate = (
-    function() {
-            let rus = "щ   ш  ч  ц  ю  я  ё  ж  ъ  ы  э  а б в г д е з и й к л м н о п р с т у ф х ь".split(/ +/g);
-            let eng = "shh sh ch cz yu ya yo zh `` y' e` a b v g d e z i j k l m n o p r s t u f x `".split(/ +/g);
-            return function(text, engToRus) {
-                var x;
-                for(x = 0; x < rus.length; x++) {
-                    text = text.split(engToRus ? eng[x] : rus[x]).join(engToRus ? rus[x] : eng[x]);
-                    text = text.split(engToRus ? eng[x].toUpperCase() : rus[x].toUpperCase()).join(engToRus ? rus[x].toUpperCase() : eng[x].toUpperCase());
-                }
-                return text;
-            }
-        }
-)();
-
-export let isCyrillic = (text) => /[а-я]/i.test(text);
-    
+/* eslint-disable no-dupe-keys */
+/* eslint-disable quote-props */
+/* eslint-disable max-len */
+/* eslint-disable import/prefer-default-export */
+export function transliterate(word, ru) {
+  const a = {
+    'Ё': 'E', 'Й': 'I', 'Ц': 'TS', 'У': 'U', 'К': 'K', 'Е': 'E', 'Н': 'N', 'Г': 'G', 'Ш': 'SH', 'Щ': 'SCH', 'З': 'Z', 'Х': 'H', 'Ъ': "'", 'ё': 'e', 'й': 'i', 'ц': 'ts', 'у': 'u', 'к': 'k', 'е': 'e', 'н': 'n', 'г': 'g', 'ш': 'sh', 'щ': 'sch', 'з': 'z', 'х': 'h', 'ъ': "'", 'Ф': 'F', 'Ы': 'I', 'В': 'V', 'А': 'a', 'П': 'P', 'Р': 'R', 'О': 'O', 'Л': 'L', 'Д': 'D', 'Ж': 'ZH', 'Э': 'E', 'ф': 'f', 'ы': 'i', 'в': 'v', 'а': 'a', 'п': 'p', 'р': 'r', 'о': 'o', 'л': 'l', 'д': 'd', 'ж': 'zh', 'э': 'e', 'Я': 'Ya', 'Ч': 'CH', 'С': 'S', 'М': 'M', 'И': 'I', 'Т': 'T', 'Ь': "'", 'Б': 'B', 'Ю': 'YU', 'я': 'ya', 'ч': 'ch', 'с': 's', 'м': 'm', 'и': 'i', 'т': 't', 'ь': "'", 'б': 'b', 'ю': 'yu',
+  };
+  const b = {
+    'U': 'У', 'K': 'К', 'E': 'Е', 'N': 'Н', 'G': 'Г', 'SH': 'Ш', 'SCH': 'Щ', 'Z': 'З', 'H': 'Х', 'yo': 'ё', 'i': 'й', 'ts': 'ц', 'u': 'у', 'k': 'к', 'e': 'е', 'n': 'н', 'g': 'г', 'sh': 'ш', 'sch': 'щ', 'z': 'з', 'h': 'х', 'F': 'Ф', 'V': 'В', 'a': 'А', 'P': 'П', 'R': 'Р', 'O': 'О', 'L': 'Л', 'D': 'Д', 'f': 'ф', 'v': 'в', 'a': 'а', 'p': 'п', 'r': 'р', 'o': 'о', 'l': 'л', 'd': 'д', 'S': 'С', 'M': 'М', 'I': 'И', 'T': 'Т', 'B': 'Б', 's': 'с', 'm': 'м', 'i': 'и', 't': 'т', 'b': 'б',
+  };
+  const str = ru ? a : b;
+  return word.split('').map((char) => str[char] || char).join('');
+}

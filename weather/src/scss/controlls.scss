@@ -14,6 +14,34 @@
 
     &_background {
         width: 30px;
+
+        &:hover {
+            & img {
+                animation: rotate .3s ease 1;
+            }
+        }
+    }
+}
+
+.fullscreen {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+    width: 30px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+        transition: all .5s ease;
+    }
+
+    &:hover {
+        & img {
+            transform: scale(1.4);
+        }
     }
 }
 
