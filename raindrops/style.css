@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    --animation-dur: 10s;
+}
+
 body {
     position: relative;
     display: flex;
@@ -118,14 +122,9 @@ body {
     border-radius: 50%;
     background-color: #e0faff;
     border: 3px solid #7bd3d3;
-    transition: all .2s ease-out;
-    animation: falling 10s linear 1;
-    animation-duration: 10s;
+    transition: opacity .1s ease-out;
+    animation: falling var(--animation-dur) linear 1;
     z-index: 30;
-}
-
-.faster {
-    animation-duration: 3s;
 }
 
 .delete {
@@ -135,13 +134,13 @@ body {
 .bonus {
     background-color: rgb(61, 242, 255);
     border: 3px solid rgb(220, 255, 253);
-    animation: falling-bg 10s linear 1, bg .6s  infinite reverse;
+    animation: falling-bg var(--animation-dur) linear 1, bg .6s  infinite reverse;
 }
 
 .double {
     background-color: rgb(245, 255, 187);
     border: 3px solid rgb(255, 220, 220);
-    animation: falling-bg 10s linear 1;
+    animation: falling-bg var(--animation-dur) linear 1;
 }
 
 @keyframes bg {
@@ -338,6 +337,20 @@ td {
     width: 33%;
 }
 
+.operators {
+    position: absolute;
+    right: 5%;
+    bottom: 2%;
+    z-index: 50;  
+    display: flex; 
+    justify-content: flex-start;
+    align-items: end;
+}
+
+input {
+    cursor: pointer;
+}
+
 
 @keyframes cloud-fly {
     0% {
@@ -393,6 +406,10 @@ td {
         font-size: 12px;
         padding-left: 10px;
         width: 100%;
+    }
+
+    .operators {
+        flex-direction: column;
     }
 
     .calc_button__l

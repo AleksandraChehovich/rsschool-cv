@@ -10,8 +10,10 @@ const mute = document.querySelector('.mute');
 const bestScoreTabble = document.querySelector('.best-score-num');
 const fullScreenBtn = document.querySelector('.fullscreen');
 const backgroundMusic = new Audio();
-const operations = ['+', '-', '*', '/'];
+const operWrap = document.querySelector('.operators');
+const operationsAll = ['+', '-', '*', '/'];
 
+let operations = [];
 let enteredResult;
 let autoTimer;
 let wavesInitialHeight = 200;
@@ -30,6 +32,7 @@ let doubleDrop = false;
 let allDropsCount = 0;
 let randomBonusDropNumber = 3;
 let randomDoubleDropNumber = 6;
+let durationTime = 10;
 
 let score = 0;
 let additionCount = 0;
@@ -68,11 +71,30 @@ let creatingNewDropsInterval = () => {
     } else if (correctAnswersCount >= 6 && correctAnswersCount < 12) {
         creatingNewDropsIntervalNumber = 2500;
         rangeOfNumbers = 25;
-     } else if (correctAnswersCount >= 12) {
+    } else if (correctAnswersCount >= 12) {
         creatingNewDropsIntervalNumber = 2000;
         rangeOfNumbers = 40;
-     }
+    }
 };
+
+function operationsFunc(event) {
+    let input = event.target;
+    if (input.checked) {
+        operations.push(input.value);
+    }  else {
+        let index = operations.indexOf(input.value);
+        operations.splice(index, 1);
+    }
+};
+
+function changeFallingDurationTime(num) {
+    const html = document.querySelector('html');
+    html.style.cssText = `--animation-dur: ${num}s`;
+};
+
+function speedUpDrops() {
+    return durationTime = allDropsCount % 10 === 0 ? durationTime - 0.5 : durationTime;
+}
 
 const setBestScore = () => {
     savedScore = score;
@@ -100,10 +122,11 @@ function getResult(operand1, strOperator, operand2) {
 
 function createDrop() {
  
-    let strOperator = randomOperation(operations);
+    let strOperator = randomOperation(operations.length === 0 ? operationsAll : operations);
     let operand1 = randomNumber(0, rangeOfNumbers);
     let operand2 = randomNumber(1, rangeOfNumbers);
     allDropsCount++;
+    changeFallingDurationTime(speedUpDrops());
 
     if (strOperator === '-' && operand1 < operand2) {
         operand1 = randomNumber(operand2, rangeOfNumbers);
@@ -134,7 +157,7 @@ function createDrop() {
 
     playingField.prepend(drop);
 
-    drop.addEventListener('animationend', missDrop);   
+    drop.addEventListener('animationend', onMissDrop);   
 };
 
 function setBonusDrop(drop) {
@@ -205,18 +228,18 @@ function checkDropForBonus(index) {
         setTimeout(function() {
             dropsArray[index].remove();
             dropsArray.splice(index, 1);
-        }, 800);
+        }, 600);
     }
 };
 
-function missDrop(drop) {
+function onMissDrop(drop) {
     const waves = document.querySelector('.waves');
     let res = this.getCurResult.result;
 
     playLooseSound();
     this.remove();
     removeResultsFromArrays(res);
-    this.removeEventListener('animationend', missDrop);
+    this.removeEventListener('animationend', onMissDrop);
 
     waves.style.height = (waves.clientHeight + 50) + 'px';
     looseCount++;     
@@ -507,7 +530,9 @@ startBtn.addEventListener('click', onStartGame);
 howToPlayBtn.addEventListener('click', onPlayAutomatic);
 
 for (let i = 0; i < dropsArray.length; i++) {
-    dropsArray[i].addEventListener('animationstart', missDrop);
+    dropsArray[i].addEventListener('animationstart', onMissDrop);
 };
+
+operWrap.addEventListener('click', operationsFunc);
 
 cloud.addEventListener('animationiteration', onChangeCloudPosition);
