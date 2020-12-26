@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Raindrops</title>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="operators">
+                <div class="operator"><input type="checkbox" class="operator_input" value="+" id="plus"><label for="plus">+</label></div>
+                <div class="operator"><input type="checkbox" class="operator_input" value="-" id="minus"><label for="minus">-</label></div>
+                <div class="operator"><input type="checkbox" class="operator_input" value="*" id="multiply"><label for="multiply">*</label></div>
+                <div class="operator"><input type="checkbox" class="operator_input" value="/" id="divide"><label for="divide">/</label></div>
+            </div>        
+        <div class="game">
+            <div class="waves">
+                <canvas class="canvas" width="1300" height="1000"></canvas>
+            </div>           
+            <img src="./img/0_d2412_32b8c825_orig.png" alt="" class="cloud">
+            <div class="icons">
+                <img class="mute icon" src="./svg/mute.svg" alt="" srcset="">
+                <img src="./svg/fullscreen1.svg" alt="" class="fullscreen icon">
+            </div>            
+        </div>
+        <div class="panel">
+            <div class="score">
+                <span class="score_text">Score:</span>
+                <span class="score_value">0</span>
+            </div>
+            <div class="calc_wrapper">
+                <div class="calc">
+                    <input disabled type="text" class="calc_item calc_input" id="display" value="">
+                    <div class="calc_item calc_item__num">
+                        <div class="calc_num">
+                            <button class="calc_button" data-value="7" data-key="55">7</button>
+                            <button class="calc_button" data-value="8" data-key="56">8</button>
+                            <button class="calc_button" data-value="9" data-key="57">9</button>
+                            <button class="calc_button" data-value="4" data-key="52">4</button>
+                            <button class="calc_button" data-value="5" data-key="53">5</button>
+                            <button class="calc_button" data-value="6" data-key="54">6</button>
+                            <button class="calc_button" data-value="1" data-key="49">1</button>
+                            <button class="calc_button" data-value="2" data-key="50">2</button>
+                            <button class="calc_button" data-value="3" data-key="51">3</button>
+                            <button class="calc_button" data-value="0" data-key="48">0</button>
+                            <button class="calc_button calc_button__hor-l" data-operation="Delete" data-key="Delete">Delete</button>
+                        </div>
+                        <div class="calc_op">
+                            <button class="calc_button calc_button__l" data-operation="Backspace" data-key="Backspace">Clear</button>
+                            <button class="calc_button calc_button__l" data-operation="Enter" data-key="Enter">Enter</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cover">
+            <button class="cover_start">Start</button>
+            <button class="cover_how-to-play">How to play</button>
+            <div class="statistic_wrapper">
+                <table class="statistic">
+                    <tr>
+                        <th></th>
+                        <th>Totall</th>
+                        <th>Current</th>
+                    </tr>
+                    <tr>
+                        <td>addition</td>
+                        <td class="addition_all"></td>
+                        <td class="addition_cur"></td>
+                    </tr>
+                    <tr>
+                        <td>subtraction</td>
+                        <td class="subtraction_all"></td>
+                        <td class="subtraction_cur"></td>
+                    </tr>
+                    <tr>
+                        <td>multiplication</td>
+                        <td class="multiplication_all"></td>
+                        <td class="multiplication_cur"></td>
+                    </tr>
+                    <tr>
+                        <td>division</td>
+                        <td class="division_all"></td>
+                        <td class="division_cur"></td>
+                    </tr>
+                </table>
+                <div class="cur-score">
+                    <span>Your score</span>
+                    <span class="cur-score-num">0</span>
+                </div>
+                <div class="best-score">
+                    <span>Best score</span>
+                    <span class="best-score-num">0</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="./waves.js"></script>
+</body>
+</html>
