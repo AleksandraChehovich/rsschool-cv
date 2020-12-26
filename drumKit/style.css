@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Itim', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.header {
+    margin-top: 40px;
+    font-size: 80px;
+}
+
+.image {
+    margin-top: 100px;
+}
+
+.buttons {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.button {
+    font-size: 25px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: violet;
+    transition: all .09s ease;
+    margin: 15px;
+    padding-top: 25px;
+    cursor: pointer;
+    box-shadow: 4px 2px 2px 0px #615a5a40, 2px 2px 3px 0px #c2b8b8, 0px 0px 0px 5px #fcfcfc, 3px 3px 19px 0px #615a5a, inset 1px -4px 5px 3px #c466c4, inset 2px 15px 3px 1px #fff0ff38, inset 1px 7px 6px 1px #fff0ff75, 0px 4px 7px 0px #000000;
+}
+
+.play {
+    transform: scale(.99);
+    box-shadow: 4px 2px 2px 0px #615a5a40, 2px 2px 3px 0px #c2b8b8, 0px 0px 0px 5px #fcfcfc, 1px 4px 19px 0px #615a5a, inset -1px -2px 11px 8px #c466c4, inset 1px 14px 3px 1px #fff0ff38, inset 1px 7px 6px 1px #fff0ff75, 0px 4px 7px 0px #000000;
+    padding-top: 28px;
+}
