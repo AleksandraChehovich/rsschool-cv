@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="video-wrapper">
+            <video loop>
+                <source src="./video/Wave.mp4" type="video/mp4">
+            </video>
+            <audio class="track" loop>
+                <source src="./audio/more.mp3">             
+            </audio>
+        </div>
+        <div class="nav">
+            <nav class="nav_menu">
+                <svg id="nav-svg" class="close" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                <path fill="#231F20" d="M9.016,40.837c0.195,0.195,0.451,0.292,0.707,0.292c0.256,0,0.512-0.098,0.708-0.293l14.292-14.309
+                    l14.292,14.309c0.195,0.196,0.451,0.293,0.708,0.293c0.256,0,0.512-0.098,0.707-0.292c0.391-0.39,0.391-1.023,0.001-1.414
+                    L26.153,25.129L40.43,10.836c0.39-0.391,0.39-1.024-0.001-1.414c-0.392-0.391-1.024-0.391-1.414,0.001L24.722,23.732L10.43,9.423
+                    c-0.391-0.391-1.024-0.391-1.414-0.001c-0.391,0.39-0.391,1.023-0.001,1.414l14.276,14.293L9.015,39.423
+                    C8.625,39.813,8.625,40.447,9.016,40.837z"/>
+                </svg>
+                <svg class="open" id="nav-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    viewBox="0 0 50 50" enable-background="new 0 0 50 50" xml:space="preserve">
+                <path fill="#231F20" d="M15.563,40.836c0.195,0.195,0.451,0.293,0.707,0.293s0.512-0.098,0.707-0.293l15-15
+                    c0.391-0.391,0.391-1.023,0-1.414l-15-15c-0.391-0.391-1.023-0.391-1.414,0s-0.391,1.023,0,1.414l14.293,14.293L15.563,39.422
+                    C15.172,39.813,15.172,40.446,15.563,40.836z"/>
+                </svg>
+                <button type="button" data-sound="./audio/more.mp3" data-video="./video/Wave.mp4" class="nav_button navigation">
+                    <img class="button_svg navigation" src="./svg/play.svg" alt="">
+                    <span class="button_text navigation">Sea</span>
+                </button>
+                <button data-sound="./audio/les.mp3" data-video="./video/Treetop.mp4" class="nav_button navigation">
+                    <img class="button_svg navigation" src="./svg/play.svg" alt="">
+                    <span class="button_text navigation">Forest</span>
+                </button>
+                <button data-sound="./audio/dojdz.mp3" data-video="./video/Rain.mp4" class="nav_button navigation">
+                    <img class="button_svg navigation" src="./svg/play.svg" alt="">
+                    <span class="button_text navigation">Rain</span>
+                </button>
+                <div class="timer_wrapper">
+                    <button class="timer timer_short" data-time="120">2 min</button>
+                    <button class="timer timer_middle" data-time="300">5 min</button>
+                    <button class="timer timer_infinity" data-time="900">15 min</button>
+                </div>
+                <div class="time-input"></div>
+            </nav>
+        </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
