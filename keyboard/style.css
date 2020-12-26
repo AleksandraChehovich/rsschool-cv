@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    margin: 20px;
+    width: 90%;
+    height: 40%;
+}
+
+.keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    padding: 20px;
+    background: #acacac14;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: all .1s linear;
+}
+
+.keyboard_keys {
+    text-align: center;
+    width: 100%;
+}
+
+.open {
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: none;
+}
+
+.keyboard_key {
+    width: 7%;
+    outline: none;
+    height: 65px;
+    max-width: 60px;
+    cursor: pointer;
+    border: 1px solid #c5c5c5;
+    font-size: 17px;    
+    vertical-align: top;
+}
+
+button:active {
+    animation: bg .9s 1 alternate;
+}
+
+@keyframes bg{
+    50% {
+        background: #c5dbdb;
+    }
+    100% {
+        background:  #c5c5c5;
+    }
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.keyboard_key__xl {
+    width: 40%;
+    max-width: 400px;
+    position: relative;
+}
+
+.keyboard_key__l {
+    background-color:#d2e6e6;
+    width: 10%;
+    max-width: 120px;
+    position: relative;
+}
+
+.backspace::before {
+    content: url(./svg/backspace.svg);
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.enter::before {
+    content: url(./svg/enter.svg);
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.caps::before {
+    content: url(./svg/caps.svg);
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close::before {
+    content: url(./svg/close.svg);
+    position: absolute;
+    width: 25px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.up {
+    color: rgb(10, 243, 30);
+    background-color:#8be3e3;
+}
