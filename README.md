@@ -1,4 +1,4 @@
-https://aleksandrachehovich.github.io/rsschool-cv/meditation/https://AleksandraChehovich.github.io/rsschool-cv/cv
+https://AleksandraChehovich.github.io/rsschool-cv/cv
 
 [Flex Gallery Panel](https://aleksandrachehovich.github.io/rsschool-cv/Flex%20Panel%20Gallery/)
 
