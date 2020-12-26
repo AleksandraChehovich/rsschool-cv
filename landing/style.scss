@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Black Ops One', cursive;
+    
+}
+
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.morning {
+    background-image: url(./img/a8410b30-f211-4c29-aa33-32c96e9713db.png);
+    background-color: #d4f6f2;
+}
+
+.day {
+    background-image: url(./img/b075c6a7-fbad-4e3a-9366-7158dfe14a61.png);
+    background-color: #b7deec;
+}
+
+.evening {
+    background-image: url(./img/7708223a-88e0-4648-8561-d4a03ef837bc.png);
+    background-color: #85929c;
+    background-position-y: bottom;
+}
+
+.night {
+    background-image: url(./img/1722948e-f1eb-4fcf-9370-2f7e94efd99e.png);
+    background-color: #434f6f;
+}
+
+.current {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-bottom: 20px;
+
+    &_time {
+    font-size: 45px;
+    }
+
+    &_date {
+        color:#fc1e0e;
+        padding-left: 45px;
+        font-size: 20px;
+    }
+} 
+
+.hello {
+    font-size: 46px;
+}
+
+.plan {
+    font-size: 32px;
+}
+
+.plans,
+.hello_name {
+    outline: none;
+}
+
+.plans {
+    font-size: 22px;
+    margin-top: 15px;
+}
