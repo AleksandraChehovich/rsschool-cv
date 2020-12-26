@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    color: #ffffffc7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    font-family: 'Arimo';
+    font-weight: bolder;
+    background-size: cover;
+    transition: all .5s;
+    overflow: hidden;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: #2e2e2ea8;
+    padding: 15px;
+}
+
+@import "./variables.scss";
+
+@import "./fonts.scss";
+
+@import "./button.scss";
+
+@import "./controlls.scss";
+
+@import "./app.scss";
+
+@import "./switchBtns.scss";
+
+@import "./searchForm.scss";
+
+@import "./data.scss";
+
+@import "./temperature.scss";
+
+@import "./animations.scss";
+
+@import "./location.scss";
+
+@import "./mixin.scss";
+
+@import "./error.scss";

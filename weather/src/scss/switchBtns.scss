@@ -1,0 +1,21 @@
+.switch {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+
+    &_item:first-of-type {
+        border-radius: 3px 0 0 3px;
+    }
+
+    &_item:last-of-type {
+        border-radius: 0 3px 3px 0;
+    }
+
+    &_item:active {
+        background: $buttons-collor-active;
+    }
+}
+
+.active {
+    background: $buttons-collor-active;
+}

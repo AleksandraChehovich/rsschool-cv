@@ -1,0 +1,88 @@
+.temperature {
+    display: flex;
+    font-size: $text-size*1.8;
+
+    &_num {
+        &__xl {
+            font-size: $text-size*5;
+        }
+
+        &__xs {
+            font-size: $text-size*0.5;
+        }
+    }
+
+    &_sign {
+        font-size: $text-size*0.7;
+
+        &__xl {
+            font-size: $text-size*2;
+        }
+
+        &__xs {
+            font-size: $text-size*0.2;
+            margin-left: 3px;
+        }
+    }
+}
+
+@include scale (880, 'less') {
+    .temperature {
+           
+        &_num {
+
+            &__xl {
+                font-size: $text-size*5;
+            }
+        }
+    }
+
+}
+
+@include scale (660, 'less') {
+    .temperature {
+           
+        &_num {
+            font-size: $text-size;
+
+            &__xl {
+                font-size: $text-size*5;
+            }
+
+            &__xs {
+                font-size: $text-size*0.5;
+            }
+        }
+    }
+
+}
+
+@include scale (470, 'less') {
+
+    .temperature {
+           
+        &_num {
+            font-size: vw(80);
+
+            &__xs {
+                font-size: $text-size*0.3;
+            }
+            
+            &__xl {
+                font-size: $text-size*3;
+            }
+        }
+
+        &_sign {
+            font-size: vw(40);
+
+            &__xs {
+                font-size: $text-size*0.1;
+            }
+
+            &__xl {
+                font-size: $text-size*0.7;
+            }            
+        }
+    }
+}

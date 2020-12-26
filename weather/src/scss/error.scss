@@ -1,0 +1,28 @@
+.error {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    z-index: 5;
+    display: none;
+
+    &_window {
+        width: 200px;
+        height: 65px;
+        background:#68686810;
+        border-radius: 3px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .5s ease-in;
+    }
+
+    &_text {
+        color: #dfdfdf;
+        font-size: 17px;
+    } 
+}
+
+.active {
+    display: block;
+}
