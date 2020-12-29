@@ -1,0 +1,136 @@
+body {
+    background: rgb(101, 150, 255);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.wrapper {
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    flex: 1;
+    max-width: 900px;
+}
+
+header {
+    text-align: center;
+    text-transform: lowercase;
+    border: 1px solid #ded9d9;
+    color: #ff00c8;
+    padding: 15px;
+    /* box-shadow: inset -10px 1px 20px 7px #47474730, inset -3px -17px 4px 20px #ffffff; */
+    background: rgba(0, 0, 0, .04);
+    border-bottom: 1px solid rgb(232 232 232 / 94%);
+    border-top: 1px solid rgb(146 146 146 / 94%);
+}
+
+main {
+    padding: 15px;
+}
+
+input {
+    background: whitesmoke;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color:  #ff00c8;
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}
+
+input, label {
+    display: block;
+    padding: 10px 5px;
+}
+
+#input {
+    width: 95%;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    font-size: 10px;
+    text-transform: lowercase;
+    color: whitesmoke;
+    background:#8fb7ff;
+    padding: 2px 6px;
+    cursor: pointer;
+    transition: all .4s ease-out;
+    align-self: center;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.name {
+    text-transform: capitalize;
+}
+
+button:hover {
+    color:  #ff00c8;
+}
+
+button:focus{
+    outline: none;
+    background:#4669ac;
+}
+
+.send {
+    padding: 6px;
+    width: 20%;
+}
+
+.message {
+    display: flex;
+    width: 80%;
+}
+
+li {
+    list-style-type: none;
+}
+
+.feedback {
+    font-style: italic;
+    font-size: 12px;
+}
+
+.green {
+    color: greenyellow;
+}
+
+.orange {
+    color: orange;
+}
+
+.grey {
+    color: gray;
+}
+
+.violet {
+    color: violet;
+}
+
+.yellow {
+    color: rgb(255, 187, 0);
+}
+
+.blue {
+    color: rgb(108, 108, 255);
+}
+
+.red {
+    color: tomato;
+}
