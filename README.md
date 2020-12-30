@@ -25,3 +25,5 @@ https://AleksandraChehovich.github.io/rsschool-cv/cv
 [custom videoPlayer](https://aleksandrachehovich.github.io/rsschool-cv/videoPlayer/)
 
 [videoSpeedController](https://aleksandrachehovich.github.io/rsschool-cv/videoSpeedController/)
+
+[Weatherapp]((https://aleksandrachehovich.github.io/rsschool-cv/weather/)
