@@ -26,4 +26,4 @@ https://AleksandraChehovich.github.io/rsschool-cv/cv
 
 [videoSpeedController](https://aleksandrachehovich.github.io/rsschool-cv/videoSpeedController/)
 
-[Weatherapp]((https://aleksandrachehovich.github.io/rsschool-cv/weather/)
+[Weatherapp](https://aleksandrachehovich.github.io/rsschool-cv/weather/dist/)
